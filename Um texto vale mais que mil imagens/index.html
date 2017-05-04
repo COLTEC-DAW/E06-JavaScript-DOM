@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tabelas</title>
+    <title>Imagem</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,16 +11,8 @@
 <body>
     <div class="container">
         <div>
-            <div class="col-sm-1 col-md-3 col-lg-3">
-                <img src="http://i.imgur.com/mUWtowV.jpg">
-                <p></p>
-            </div>
-            <div class="col-sm-1 col-md-3 col-lg-3">
-                <img src="http://i.imgur.com/mUWtowV.jpg">
-                <p></p>
-            </div>
-            <div class="col-sm-1 col-md-3 col-lg-3">
-                <img src="http://i.imgur.com/mUWtowV.jpg">
+            <div id="div1" class="col-sm-1 col-md-3 col-lg-3">
+                <img id="img1" src="http://i.imgur.com/mUWtowV.jpg">
                 <p></p>
             </div>
             <div class="col-sm-1 col-md-3 col-lg-3">
@@ -30,15 +22,35 @@
     </div>
 
     <script>
+        var controle = true;
         function clicou(){
-            var imagem = document.getElementsByTagName('img');
-            for(var i=0;i<imagem.length;i++){
-                imagem[i].src = "";
+            if(controle){
+
+                var imagem = document.getElementById("div1");
+                var child = document.getElementById("img1");
+                imagem.removeChild(child);
+
+                var txt = document.getElementsByTagName('p');
+                for(var i=0;i<txt.length;i++){
+                    txt[i].innerHTML = "sad";
+                }    
+                controle=false;  
+
             }
-            var txt = document.getElementsByTagName('p');
-            for(var i=0;i<txt.length;i++){
-                txt[i].innerHTML = "Sad";
-            }
+            else{
+
+                var img = document.createElement("img");
+                img.src = "http://i.imgur.com/mUWtowV.jpg";
+                img.id = "img1";
+                var element = document.getElementById("div1");
+                element.appendChild(img);
+
+                var txt = document.getElementsByTagName('p');
+                for(var i=0;i<txt.length;i++){
+                    txt[i].innerHTML = "";
+                }    
+                controle=true;            
+            };
         }
     </script>
 
