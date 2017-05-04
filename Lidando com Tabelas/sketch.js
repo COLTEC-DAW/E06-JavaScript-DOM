@@ -1,37 +1,22 @@
-
-
-function funcao(){
-	var texto = document.getElementsByTagName("textarea")[0].value;
-    var tabela = document.getElementsByTagName("table")[0];
-    var txt = texto.split('\n');
-    var vet=[];
-    var space=[];
-
-
-	for(var i = 0; i < txt.length; i++) {
-		vet[i] = txt[i].split(',');
-	}
-
-
-    for(var i=0;i<vet.length;i++){
-        var element = document.createElement("tr");
-        if(txt[i]==","){
-            var element2 = document.createElement("th");
-            var node = document.createTextNode(vet[i][j]);
-
-            element2.appendChild(node);
-            element.appendChild(element2);      
+function tranformar(){
+    var txt = document.getElementsByTagName("textarea")[0].value;   //pega o texto da textarea
+    var tabela = document.getElementsByTagName("table")[0];         //pega a tabela
+    var texto = txt.split('\n');  //coloca todo o conteudo da textarea e manda para uma string, separando por virgula linhas diferentes
+    var vet = [];                 //vetor no qual cada posição representa o conteudo de uma linha
+    for(var i=0;i<texto.length;i++){
+        vet[i] = texto[i].split(',');   //coloca o texto até a virgula em uma posição do vetor e retira essa virgula
+    }
+    //criar a tabela
+    for(var i=0;i<vet.length;i++){  //navega por todo o vetor de texto
+        var element_linha = document.createElement("tr");     //cada linha da tabela é definida pela tag <tr>
+        for(var j=0;j<vet.length[i];j++){   //navega dentro das posições
+            var element_celula = document.createElement("td");  //cada celula da tabela é definida pela tag <td>
+            var node = document.createTextNode(vet[i][j]); //conteudo da celula
+            element_celula.appendChild(node);
+            element_linha.appendChild(element_celula);
         }
-        else{
-            for(var j=0;j<vet[i].length;j++){
-                    var element2 = document.createElement("td");
-                    var node = document.createTextNode(vet[i][j]);
-
-                    element2.appendChild(node);
-                    element.appendChild(element2);
-            }
-        }
-        var local = document.getElementById("tabelas");
-        local.appendChild(element);    
+        //colocar na página
+        var element = document.getElementById("tabelas");
+        element.appendChild(element_linha);    
     }
 }
