@@ -22,5 +22,5 @@ function getRodaAgain(node, string) {
 }
 
 console.log(getRodaAgain(document.body, "section"));
-console.log(getByName(body, "a", tagName));
-console.log(getByName(body, "img", tagName));
+console.log(getRodaAgain(document.body, "a"));
+console.log(getRodaAgain(document.body, "img"));
