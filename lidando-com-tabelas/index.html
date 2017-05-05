@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lidando com Tabelas</title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col jumbotron text-center title">
+          <h1>CSV - HTML</h1>
+          <p>Converta tabelas do formato csv para html!</p>
+        </div>
+      
+
+        <div class="col-sm-12 col-lg-6" id="formulario">
+         <form>
+            <div class="form-group">
+              <label for="tabela-principal">Digite a tabela no formato CSV:</label>
+              <textarea class="form-control" rows="5" id="tabela-principal"></textarea>
+            </div>
+          </form>
+          <button type="button" id="btConvert" class="btn btn-success" onclick="converter();">Converter!</button>
+        </div>
+
+        <div class="col-sm-12 col-lg-6" id="tabela">
+          <h4>Tabela:</h4> 
+            <table class="table">
+              <tbody id="conteudo-principal-tabela">
+              
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
