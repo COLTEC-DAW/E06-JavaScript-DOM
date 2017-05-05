@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://coltec-daw.github.io/Aula-06-JavaScript/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>JavaScript</title>
+    
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="./JavaScript_files/screen.css">
+    <link rel="stylesheet" href="./JavaScript_files/default.css">
+    <link rel="stylesheet" type="text/css" href="./JavaScript_files/960gs.css">
+    <link rel="stylesheet" type="text/css" href="./JavaScript_files/style.css">
+  </head>
+  <body class="list">
+    <header class="caption">
+      <h1>JavaScript</h1>
+      <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+    </header>
+    <section class="slide cover" id="Cover">
+      <div>
+        <h2>JavaScript</h2>
+        <p>João Eduardo Montandon</p>
+        <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+        <img src="./JavaScript_files/wallpaper_coltec_wide.png" alt="">
+      </div>
+    </section>
+    <section class="slide" id="2">
+      <div>
+        <h2>Introdução</h2>
+        <ul>
+          <li>Desenvolvida por Brendan Eich em 1995, então funcionário da Netscape</li>
+
+          <li>Objetivo: prover características "dinâmicas" ao browser</li>
+
+          <li>Linguagem de Programação <em>client-side</em> voltada para
+            navegadores web</li>
+
+          <li>Atualmente, utilizada para os mais diversos propósitos (web,
+            mobile, <em>server-side</em>, <em>client-side</em>)</li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide" id="3">
+      <div>
+        <h2>Introdução</h2>
+        <ul>
+          <li>Principais características:</li>
+          <ul>
+            <li>Linguagem interpretada</li>
+            <li>Tipagem dinâmica</li>
+            <li>Sintaxe similar ao Java</li>
+            <li>Executada por qualquer browser atualmente</li>
+          </ul>
+        </ul>
+      </div>
+    </section>
+    <section class="slide" id="4">
+      <div>
+        <h2>Introdução - Exemplos</h2>
+          <div class="container_12">
+            <div class="grid_6">
+              <p>
+                <button name="button" onclick="alert(&#39;Hello World&#39;)">Click me</button>
+              </p>
+            </div>
+            <div class="grid_6">
+              <p>
+                <button name="button1" onclick="changeName()">Click me again!!</button>
+              </p>
+              <p>
+                Seu nome é: <span id="userName"></span>
+              </p>
+            </div>
+          </div>
+      </div>
+    </section>
+    <section class="slide" id="5">
+      <div>
+        <h2>JavaScript - Sintaxe</h2>
+        <ul>
+          <li>Similar a linguagem Java</li>
+          <li>Inclui as principais estruturas de programação (<code>if-else,
+            while, do-while, for, ...</code>)</li>
+          <li>Ponto-e-vírgula não é obrigatório, porém <b>altamente</b> recomendado</li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide" id="6">
+      <div>
+        <h2>JavaScript - Valores</h2>
+        <p style="margin-bottom: 18px;">
+          JavaScript reconhece 5 tipos de valores primitivos:
+        </p>
+        <table>
+          <thead>
+            <tr><td>Tipo</td>
+            <td>Exemplo</td>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td>Numbers</td>
+              <td><code>3.14</code></td>
+            </tr>
+            <tr>
+              <td>Boolean</td>
+              <td><code>true | false</code></td>
+            </tr>
+            <tr>
+              <td>Strings</td>
+              <td><code>"Qualquer frase"</code></td>
+            </tr>
+            <tr>
+              <td><code>null</code></td>
+              <td><code>null</code>, duh!?</td>
+            </tr>
+            <tr>
+              <td><code>undefined</code></td>
+              <td>Valor indefinido</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="slide" id="7">
+      <div>
+        <h2>JavaScript - Variáveis</h2>
+        <p>
+          Em JavaScript, as variáveis são dinamicamente tipadas
+        </p>
+        <p>
+          Isto é, você declara uma variável com tipo <code>var</code>, e então o programa infere seu tipo durante a execução
+        </p>
+      </div>
+    </section>
+    <section class="slide" id="8">
+      <div>
+        <h2>JavaScript - Variáveis</h2>
+        <div class="container_12">
+          <div class="grid_6">
+            <button name="button" onclick="exampleVar1();">Exemplo 1</button>
+            <pre>              <code id="varEx1" class="hljs coffeescript">
+<span class="hljs-reserved">var</span> a = <span class="hljs-number">42</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"a= "</span> + a);
+a = <span class="hljs-string">"teste"</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"a= "</span> + a);
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            <button name="button" onclick="exampleVar2();">Exemplo 2</button>
+            <pre>              <code id="varEx2" class="hljs coffeescript">
+<span class="hljs-reserved">var</span> input;
+<span class="hljs-keyword">if</span>(input === <span class="hljs-literal">undefined</span>){
+  alert(<span class="hljs-string">"undefined"</span>);
+} <span class="hljs-keyword">else</span> {
+  alert(<span class="hljs-string">"defined"</span>);
+}
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="9">
+      <div>
+        <h2>Variáveis - Escopo</h2>
+        <p>
+          As variáveis possuem escopo <b>global</b> e <b>local</b>.
+        </p>
+        <ul>
+          <li>Local: Quando definidas dentro de qualquer função</li>
+          <li>Global: Quando definidas fora de uma função</li>
+        </ul>
+        <p class="note">
+          JavaScript não possui escopo de bloco. Uma variável declarada em um
+          bloco local é visível para a função que contém este bloco.
+        </p>
+      </div>
+    </section>
+    <section class="slide" id="10">
+      <div>
+        <h2>Variáveis - Escopo</h2>
+        <div class="container_12">
+          <div class="grid_6">
+            <button name="button" onclick="exampleVar3();">Exemplo</button>
+            <pre>              <code class="hljs coffeescript">
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+  <span class="hljs-reserved">var</span> x = <span class="hljs-number">5</span>;
+}
+<span class="hljs-built_in">console</span>.log(x);
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            <button name="button" onclick="exampleVar4();">Exemplo</button>
+            <pre>              <code class="hljs javascript">
+<span class="hljs-keyword">var</span> x = <span class="hljs-number">7</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Antes da funcao: "</span> + x);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunction</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> y = <span class="hljs-number">21</span>;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Na Funcao:"</span> + x);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Na Funcao:"</span> + y);
+}
+myFunction();
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Depois da Funcao"</span> + y);
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="11">
+      <div>
+        <h2>Variáveis - Constantes</h2>
+        <p>
+          Variáveis read-only. Devem ser criadas utilizando a palavra reservada
+          <code>const</code>.
+        </p>
+        <div class="container_12">
+          <div class="grid_4">
+            <pre>              <code class="hljs cpp">
+<span class="hljs-keyword">const</span> c = <span class="hljs-number">5.15</span>;
+console.<span class="hljs-built_in">log</span>(c);
+              </code>
+            </pre>
+          </div>
+          <div class="grid_4">
+            <pre>              <code class="hljs javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span><span class="hljs-params">()</span> </span>{};
+<span class="hljs-keyword">const</span> f = <span class="hljs-number">5</span>;
+<span class="hljs-built_in">console</span>.log(f);
+              </code>
+            </pre>
+          </div>
+          <div class="grid_4">
+            <pre>              <code class="hljs cpp">
+<span class="hljs-keyword">const</span> f = <span class="hljs-number">5</span>;
+console.<span class="hljs-built_in">log</span>(f);
+f = <span class="hljs-number">3.14</span>;
+console.<span class="hljs-built_in">log</span>(f);
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="12">
+      <div>
+        <h2 style="margin-bottom: 18px;">Variáveis - Vetores</h2>
+        <p style="margin-bottom: 18px;">
+          Os vetores podem ter elementos de vários tipos. Caso não seja declarado
+          um valor para uma determinada posição, o elemento assumirá o valor
+          <code>undefined</code>
+        </p>
+        <pre>          <code class="hljs coffeescript">
+<span class="hljs-reserved">var</span> nomes = [<span class="hljs-string">"Joao"</span>, <span class="hljs-string">"Maria"</span>, <span class="hljs-string">"Jose"</span>];
+<span class="hljs-reserved">var</span> idade = [<span class="hljs-number">25</span>, , <span class="hljs-number">34</span>];
+<span class="hljs-reserved">var</span> id = [<span class="hljs-number">1223</span>, <span class="hljs-string">"RG25632"</span>, <span class="hljs-number">19827</span>];
+
+<span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; nomes.length; i++) {
+  <span class="hljs-built_in">console</span>.log(nomes[i] + <span class="hljs-string">" "</span> + idade[i] + <span class="hljs-string">" "</span> + id[i]);
+}
+          </code>
+        </pre>
+        <p>
+          <button name="button" onclick="exampleVet();">
+            Exemplo</button>
+        </p>
+      </div>
+    </section>
+    <section class="slide" id="13">
+      <div>
+        <h2 style="margin-bottom: 18px;">JavaScript - Operadores</h2>
+        <ul style="margin-bottom: 18px; font-size:0.9em;">
+          <li>Basicamente, utilizam-se os mesmos operadores que são utilizados em
+            Java e C/C++.</li>
+          <li>Detalhe para o comportamento dos operadores de comparação, como
+            pode ser visto na tabela abaixo:</li>
+        </ul>
+        <table style="font-size: 0.8em;">
+          <thead>
+            <tr>
+              <td>Operador</td><td>Função</td><td>Exemplos verdadeiros</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>==</td><td>Igual</td><td>"3" == 3</td>
+            </tr>
+            <tr>
+              <td>!=</td><td>Diferente</td><td>var != 3</td>
+            </tr>
+            <tr>
+              <td>===</td><td>Estritamente Igual (tipo e valor)</td><td> 3 === 3</td>
+            </tr>
+            <tr>
+              <td>!==</td><td>Estritamente Diferente</td><td>"3" !== 3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="slide" id="14">
+      <div>
+        <h2>JavaScript - Estruturas de Controle</h2>
+          <p>JavaScript possui as duas estruturas de controle convencionais:
+          <code>if</code>'s e <code>switch</code>'s</p>
+          <p>Nota: <code>switch</code> pode ser feito com qualquer tipo
+            primitivo</p>
+      </div>
+    </section>
+    <section class="slide" id="15">
+      <div>
+        <h2>JavaScript - Estruturas de Controle</h2>
+         <div class="container_12" style="font-size: 0.7em;">
+          <div class="grid_7">
+            <pre>              <code class="hljs php">
+<span class="hljs-keyword">var</span> login = prompt(<span class="hljs-string">"Digite seu login"</span>);
+<span class="hljs-keyword">if</span>(login == <span class="hljs-string">"admin"</span>) {
+  alert(<span class="hljs-string">"login realizado com sucesso"</span>);
+} <span class="hljs-keyword">else</span> {
+  alert(<span class="hljs-string">"Falha na autenticação. Deseja tentar novamente?"</span>);
+}
+              </code>
+            </pre>
+          </div>
+          <div class="grid_5">
+            <pre>              <code class="hljs php">
+<span class="hljs-keyword">var</span> role = prompt(<span class="hljs-string">"Digite seu cargo"</span>);
+<span class="hljs-keyword">switch</span>(role) {
+  <span class="hljs-keyword">case</span> <span class="hljs-string">"admin"</span>:
+  alert(<span class="hljs-string">"Administrador"</span>);
+  <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">"dev"</span>:
+  alert(<span class="hljs-string">"Desenvolvedor"</span>);
+  <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">"test"</span>:
+  alert(<span class="hljs-string">"Tester"</span>);
+  <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">default</span>:
+  alert(<span class="hljs-string">"Não disponível"</span>);
+}
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="16">
+      <div>
+        <h2>JavaScript - Estruturas de Repetição</h2>
+        <p>
+          JavaScript posssui as principais estruturas de repetição:
+          <code>while</code>, <code>do-while</code>, e <code>for</code>.
+        </p>
+        <div class="container_12">
+          <div class="grid_4">
+            <pre>              <code class="hljs coffeescript">
+<span class="hljs-reserved">var</span> i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>) {
+  <span class="hljs-built_in">console</span>.log(i);
+  i++;
+}
+              </code>
+            </pre>
+          </div>
+          <div class="grid_4">
+            <pre>              <code class="hljs coffeescript">
+<span class="hljs-reserved">var</span> i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">do</span> {
+  <span class="hljs-built_in">console</span>.log(i % <span class="hljs-number">10</span>);
+  i++;
+}<span class="hljs-keyword">while</span>(i%<span class="hljs-number">10</span> != <span class="hljs-number">9</span>);
+              </code>
+            </pre>
+          </div>
+          <div class="grid_4">
+            <pre>              <code class="hljs cpp">
+<span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">30</span>; i++) {
+  console.<span class="hljs-built_in">log</span>(i);
+}
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide section" id="17">
+      <div>
+        <h2>JavaScript: Funções</h2>
+      </div>
+    </section>
+    <section class="slide" id="18">
+      <div>
+        <h2>Funções</h2>
+          <ul>
+            <li>Um dos recursos mais poderosos da linguagem</li>
+            <li>Sintaxe básica: <code>function funcao(arg1, arg2, ..., argN)</code></li>
+            <li>Uso de <code>return</code> é opcional</li>
+            <li>Podem ser atribuída a variáveis</li>
+          </ul>
+      </div>
+    </section>
+    <section class="slide" id="19">
+      <div>
+        <h2>Funções - Declaração</h2>
+        <p>
+          Funções podem ser declaradas de duas formas:
+        </p>
+        <div class="container_12">
+          <div class="grid_6">
+            <pre>              <code class="hljs javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span><span class="hljs-params">(number)</span> </span>{
+  <span class="hljs-keyword">return</span> number * number;
+}
+<span class="hljs-built_in">console</span>.log(square(<span class="hljs-number">4</span>));
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            <pre>              <code class="hljs javascript">
+<span class="hljs-keyword">var</span> square = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(number)</span> </span>{
+  <span class="hljs-keyword">return</span> number * number;
+}
+<span class="hljs-built_in">console</span>.log(square(<span class="hljs-number">4</span>));
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="20">
+      <div>
+        <h2>Funções - Parâmetros</h2>
+        <ul>
+          <li>Não é necessário especificar o tipo do parâmetro (<code>var</code>)</li>
+          <li>Tipos primitivos: Passagem por valor</li>
+          <li>Objetos: Passagem por referência</li>
+          <li>Caso sejam passados mais argumentos que o necessário, os demais são
+            desconsiderados</li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide" id="21">
+      <div>
+        <h2>Funções - Parâmetros</h2>
+        <div class="container_12">
+          <div class="grid_6">
+            <pre>              <code class="hljs php">
+<span class="hljs-keyword">var</span> square = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(number)</span> </span>{
+  <span class="hljs-keyword">return</span> number * number
+};
+<span class="hljs-keyword">var</span> x = square(<span class="hljs-number">4</span>);
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            <pre>              <code class="hljs javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transform</span><span class="hljs-params">(vetor)</span> </span>{
+  <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; vetor.length; i++) {
+    vetor[i] = vetor[i].toUpperCase();
+  }
+};
+<span class="hljs-keyword">var</span> vetor = [<span class="hljs-string">"a"</span>, <span class="hljs-string">"B"</span>, <span class="hljs-string">"c"</span>];
+<span class="hljs-built_in">console</span>.log(vetor);
+transform(vetor, <span class="hljs-string">"5"</span>);
+<span class="hljs-built_in">console</span>.log(vetor);
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="22">
+      <div>
+        <h2>Funções - Escopo</h2>
+        <ul>
+          <li>Como já dito anteriormente, JavaScript delimita escopo por funções
+            (não por blocos)</li>
+          <li>Variáveis locais: variáveis recebidas como parâmetro ou declaradas
+            por meio de <code>var</code></li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide" id="23">
+      <div class="container_12">
+        <h2>Funções - Escopo</h2>
+        <div class="grid_6">
+          <pre>            <code class="hljs javascript">
+<span class="hljs-keyword">var</span> x = <span class="hljs-string">"outside"</span>;
+
+<span class="hljs-keyword">var</span> f1 = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> x = <span class="hljs-string">"inside f1"</span>;
+};
+f1();
+<span class="hljs-built_in">console</span>.log(x);
+            </code>
+          </pre>
+        </div>
+        <div class="grid_6">
+          <pre>            <code class="hljs javascript">
+<span class="hljs-keyword">var</span> x = <span class="hljs-string">"outside"</span>;
+
+<span class="hljs-keyword">var</span> f2 = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  x = <span class="hljs-string">"inside f2"</span>;
+};
+f2();
+<span class="hljs-built_in">console</span>.log(x);
+            </code>
+          </pre>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="24">
+      <div>
+        <h2>Funções - Escopo Aninhado</h2>
+        <p>JavaScript permite a criação de funções aninhadas</p>
+        <p>Neste caso, o escopo da função se limita ao nível em que ela
+        foi declarada</p>
+      </div>
+    </section>
+    <section class="slide" id="25">
+      <div>
+        <h2>
+          Funções - Escopo Aninhado
+        </h2>
+        <div class="container_12" style="font-size: 0.9em;">
+          <div class="grid_8">
+            <pre>          <code class="hljs php">
+<span class="hljs-keyword">var</span> landscape = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> result = <span class="hljs-string">""</span>;
+  <span class="hljs-keyword">var</span> flat = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(size)</span> </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>; count &lt; size; count++)
+    result += <span class="hljs-string">"_"</span>;
+  };
+  <span class="hljs-keyword">var</span> mountain = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(size)</span> </span>{
+    result += <span class="hljs-string">"/"</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>; count &lt; size; count++)
+    result += <span class="hljs-string">"'"</span>;
+    result += <span class="hljs-string">"\\"</span>;
+  };
+          </code>
+        </pre>
+          </div>
+          <div class="grid_4">
+            <pre>              <code class="hljs cpp">
+  flat(<span class="hljs-number">3</span>);
+  mountain(<span class="hljs-number">4</span>);
+  flat(<span class="hljs-number">6</span>);
+  mountain(<span class="hljs-number">1</span>);
+  flat(<span class="hljs-number">1</span>);
+  <span class="hljs-keyword">return</span> result;
+};
+console.<span class="hljs-built_in">log</span>(landscape());
+</code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="26">
+      <div>
+        <h2>Funções como valores</h2>
+        <ul>
+          <li>Uma das formas de declarar funções é através da forma anônima:</li>
+            <p>
+              </p><pre><code class="hljs php"><span class="hljs-keyword">var</span> fac = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(n)</span> </span>{ <span class="hljs-keyword">return</span> n &lt; <span class="hljs-number">2</span> ? <span class="hljs-number">1</span> : n*fac(n-<span class="hljs-number">1</span>) }</code></pre>
+            <p></p>
+          <li>Se uma função pode ser armazenada em uma variável, então podemos
+              manipulá-la como uma variável</li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide" id="27">
+      <div class="container_12">
+        <h2>Funções como valores</h2>
+        <div class="grid_12">
+          <pre>            <code class="hljs php">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">map</span><span class="hljs-params">(f,a)</span> </span>{
+  <span class="hljs-keyword">var</span> result = [], i;
+  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i != a.length; i++)
+    result[i] = f(a[i]);
+  <span class="hljs-keyword">return</span> result;
+}
+<span class="hljs-keyword">var</span> mapping = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(x)</span> </span>{
+  <span class="hljs-keyword">return</span> x * x * x
+};
+map(mapping, [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>]);
+            </code>
+          </pre>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="28">
+      <div>
+        <h2>Funções <em>built-in</em></h2>
+        <table style="font-size:0.9em;">
+          <thead>
+            <tr><td>Nome</td><td>Funcionalidade</td></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>eval(str)</code></td><td>Interpreta uma string como trecho de código JavaScript</td></tr>
+            <tr><td><code>isFinite(number)</code></td><td>Verifica se um número é finito</td></tr>
+            <tr><td><code>isNaN(testValue)</code></td><td>Verifica se o valor é NaN</td></tr>
+            <tr><td><code>parseFloat(str)</code></td><td>Converte uma String para float</td></tr>
+            <tr><td><code>parseInt(str)</code></td><td>Converte uma String para Int</td></tr>
+            <tr><td><code>Number(objRef)</code></td><td>Converte um Objeto para Número</td></tr>
+            <tr><td><code>String(objRef)</code></td><td>Converte um Objeto para String</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!--       JavaScript: Objetos e Arrays      -->
+    <header class="caption">
+      <h1>JavaScript</h1>
+      <h2>Estrutura de Dados: Objetos e Arrays</h2>
+      <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+    </header>
+    <section class="slide cover" id="29">
+      <div>
+        <h2>JavaScript</h2>
+        <h3>Estrutura de Dados: Objetos e Arrays</h3>
+        <p>João Eduardo Montandon</p>
+        <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+      </div>
+    </section>
+    <section class="slide" id="30">
+      <div>
+        <h2>Introdução</h2>
+        <p><code>Number</code>s, <code>boolean</code>s, e <code>string</code>s representam simples tipos de dados</p>
+        <p><b>Como representar tipos mais complexos?</b></p>
+      </div>
+    </section>
+    <section class="slide" id="31">
+      <div>
+        <h2>Vetores</h2>
+        <p><b>Opção 01:</b> usar um vetor para armazenar as propriedades do objeto</p>
+        <p><b>Vetores:</b> Estrutura de dados que permite armazenar uma coleção de valores</p>
+        <p>Pode-se armazenar valores de qualquer tipo</p>
+        <p>Objetos podem ser recuperados por meio de seu índice</p>
+      </div>
+    </section>
+    <section class="slide" id="32">
+      <div>
+        <h2>Vetores</h2>
+          <ul>
+            <li>Declaração: <code>var meuArray = [0, 10, "vinte"]</code></li>
+            <li>Uso: <code>console.log(meuArray[2])</code></li>
+          </ul>
+          <div class="container_12">
+            <div class="grid_6">
+              <pre>                <code class="hljs php"><span class="hljs-keyword">var</span> carro = [];
+carro[<span class="hljs-number">0</span>] = <span class="hljs-string">"Fiat"</span>;
+carro[<span class="hljs-number">1</span>] = <span class="hljs-string">"Uno"</span>;
+carro[<span class="hljs-number">2</span>] = <span class="hljs-number">2015</span>;
+                </code>
+              </pre>
+            </div>
+            <div class="grid_6">
+              <pre>                <code class="hljs cpp">console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Marca: "</span> + carro[<span class="hljs-number">0</span>]);
+console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"\nModelo: "</span> + carro[<span class="hljs-number">1</span>]);
+console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"\nAno: "</span> + carro[<span class="hljs-number">2</span>]);
+                </code>
+              </pre>
+            </div>
+          </div>
+      </div>
+    </section>
+    <section class="slide" id="33">
+      <div>
+        <h2>Vetores - Funções &amp; Propriedades</h2>
+        <p>Os vetores tem uma série de funções e propriedades</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Função/Propriedade</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>length</code></td>
+              <td>Acessa tamanho do array</td>
+            </tr>
+            <tr>
+              <td><code>push(var)</code></td>
+              <td>empilha um elemento no array</td>
+            </tr>
+            <tr>
+              <td><code>pop()</code></td>
+              <td>Desempilha um elemento do array</td>
+            </tr>
+            <tr>
+              <td><code>join("str")</code></td>
+              <td>Concatena os elementos do array</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="slide" id="34">
+      <div>
+        <h2>Vetores - Funções &amp; Propriedades</h2>
+        <div class="container_12">
+          <div class="grid_6">
+            <pre>              <code class="hljs perl">
+var mack = [];
+mack.<span class="hljs-keyword">push</span>(<span class="hljs-string">"Mack"</span>);
+mack.<span class="hljs-keyword">push</span>(<span class="hljs-string">"the"</span>, <span class="hljs-string">"Knife"</span>);
+console.<span class="hljs-keyword">log</span>(mack);
+<span class="hljs-regexp">//</span> [<span class="hljs-string">"Mack"</span>, <span class="hljs-string">"the"</span>, <span class="hljs-string">"Knife"</span>]
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            <pre>              <code class="hljs cpp">
+console.<span class="hljs-built_in">log</span>(mack.join(<span class="hljs-string">" "</span>));
+<span class="hljs-comment">// Mack the Knife</span>
+console.<span class="hljs-built_in">log</span>(mack.pop());
+<span class="hljs-comment">// Knife</span>
+console.<span class="hljs-built_in">log</span>(mack);
+<span class="hljs-comment">// ["Mack", "the"]</span>
+              </code>
+            </pre>            
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="35">
+      <div>
+        <h2>Objetos</h2>
+        <p><b>Opção 02: </b> Utilizar um <code>object</code> para armazenar seus valores</p>
+        <p><code>object</code>: estrutura de dados que permite manipular uma coleção arbitrária de valores</p>
+        <p>Os valores são inseridos, lidos e excluídos por meio do nome que lhe é dado</p>
+      </div>
+    </section>
+    <section class="slide" id="36">
+      <div>
+        <h2>Objetos</h2>
+        <ul>
+          <li>Declaração: <code>var meuObjeto = { ... }</code></li>
+          <li>Uso: <code>console.log(meuObjeto.minhaPropriedade)</code></li>
+        </ul>
+        <div class="container_12">
+          <div class="grid_6">
+            <pre>              <code class="hljs php"><span class="hljs-keyword">var</span> meuCarro = {
+  marca: <span class="hljs-string">"Fiat"</span>,
+  modelo: <span class="hljs-string">"Uno"</span>,
+  ano: [<span class="hljs-number">2014</span>, <span class="hljs-number">2015</span>],
+  usado: <span class="hljs-keyword">false</span>
+};
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            <pre>              <code class="hljs cpp">console.<span class="hljs-built_in">log</span>(meuCarro.marca);
+console.<span class="hljs-built_in">log</span>(meuCarro.modelo);
+meuCarro.usado = <span class="hljs-keyword">true</span>;
+console.<span class="hljs-built_in">log</span>(meuCarro.usado);
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="37">
+      <div>
+        <h2>Objetos - Propriedades</h2>
+        <p>Leitura de propriedades inexistentes retornam <code>undefined</code></p>
+        <p>Novas propriedades podem ser adicionadas dinamicamente: <code>obj.novaPropriedade = novoValor</code></p>
+      </div>
+    </section>
+    <section class="slide" id="38">
+      <div>
+        <h2>Objetos - Operadores unários</h2>
+        <p>Os objetos possuem alguns operadores unários para lidar com suas propriedades</p>
+        <table style="font-size: 0.9em;">
+          <thead>
+            <tr>
+              <th>Operador</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>delete obj.prop</code></td>
+              <td>Deleta uma determinada propriedade <em>prop</em></td>
+            </tr>
+            <tr>
+              <td><code>"prop" in obj</code></td>
+              <td>Verifica se um objeto possui uma propriedade <em>"prop"</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="slide" id="39">
+      <div>
+        <h2>Objetos - Mutabilidade</h2>
+        <p>Diferentemente dos tipos primitivos, objetos são <b>mutáveis</b></p>
+        <p>Para se mudar, basta mudar uma de suas propriedades</p>
+        <p>Para se comparar objetos, utilizamos o operador <code>==</code></p>
+      </div>
+    </section>
+    <section class="slide" id="40">
+      <div>
+        <h2>Objetos - Mutabilidade</h2>
+        <pre>          <code class="hljs cs"><span class="hljs-keyword">var</span> object1 = {<span class="hljs-keyword">value</span>: <span class="hljs-number">10</span>};
+<span class="hljs-keyword">var</span> object2 = object1;
+<span class="hljs-keyword">var</span> object3 = {<span class="hljs-keyword">value</span>: <span class="hljs-number">10</span>};
+
+console.log(object1 == object2); <span class="hljs-comment">// true</span>
+console.log(object1 == object3); <span class="hljs-comment">// false</span>
+
+object1.<span class="hljs-keyword">value</span> = <span class="hljs-number">15</span>;
+console.log(object2.<span class="hljs-keyword">value</span>); <span class="hljs-comment">// 15</span>
+console.log(object3.<span class="hljs-keyword">value</span>); <span class="hljs-comment">// 10</span>
+          </code>
+        </pre>
+      </div>
+    </section>
+    <!--        JavaScript: Funções de Alta Ordem         -->
+    <header class="caption">
+      <h1>JavaScript</h1>
+      <h2>Funções de Alta Ordem</h2>
+      <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+    </header>
+    <section class="slide cover" id="41">
+      <div>
+        <h2>JavaScript</h2>
+        <h3>Funções de Alta Ordem</h3>
+        <p>João Eduardo Montandon</p>
+        <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+      </div>
+    </section>
+    <section class="slide" id="42">
+      <div>
+        <h2>Introdução</h2>
+        <p>Uma das grandes vantagens das linguagens estruturadas é a capacidade de <b>abstração</b></p>
+        <p>Abstração: capacidade de "mostrar" apenas o suficiente ao desenvolvedor</p>
+      </div>
+    </section>
+    <section class="slide" id="43">
+      <div>
+        <h2>Introdução</h2>
+        <p>As linguagens Estruturadas e Orientadas a Objeto nos dá a possibilidade de abstrair dados</p>
+        <p>Mas, algumas vezes essas linguagens <b>falham</b> miseralvemente em prover certas abstrações...</p>
+      </div>
+    </section>
+    <section class="slide" id="44">
+      <div>
+        <h2>Introdução - Exemplo</h2>
+        <pre>          <code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logEach</span><span class="hljs-params">(array)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">array</span>.length; i++)
+  console.log(<span class="hljs-keyword">array</span>[i]);
+}
+logEach([<span class="hljs-string">"Wampeter"</span>, <span class="hljs-string">"Foma"</span>, <span class="hljs-string">"Granfalloon"</span>]);</code>
+        </pre>
+        <p><b>Mas e se eu quiser fazer algo diferente de logging??</b></p>
+      </div>
+    </section>
+    <section class="slide" id="45">
+      <div>
+        <h2>Introdução - Exemplo: The JS way</h2>
+        <pre>          <code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forEach</span><span class="hljs-params">(array, action)</span> </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">array</span>.length; i++)
+    action(<span class="hljs-keyword">array</span>[i]);
+}
+
+<span class="hljs-keyword">forEach</span>([<span class="hljs-string">"Wampeter"</span>, <span class="hljs-string">"Foma"</span>, <span class="hljs-string">"Granfalloon"</span>], console.log);</code>
+        </pre>
+      </div>
+    </section>
+    <section class="slide" id="46">
+      <div>
+        <h2>Funções de Alta Ordem</h2>
+        <p>São funções que "trafegam" outras funções em suas chamadas, seja por parâmetro ou retorno</p>
+        <p>Em outras palavras... capacidade de lidar com funções como valores</p>
+        <p><b>Principal Benefício: Permitir abstrações sobre ações, não apenas valores</b></p> 
+      </div>
+    </section>
+    <section class="slide" id="47">
+      <div>
+        <h2>Funções de Alta Ordem - Exemplo</h2>
+        <pre>          <code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greaterThan</span><span class="hljs-params">(n)</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(m)</span> </span>{ <span class="hljs-keyword">return</span> m &gt; n; };
+}
+
+<span class="hljs-keyword">var</span> greaterThan10 = greaterThan(<span class="hljs-number">10</span>);
+<span class="hljs-built_in">console</span>.log(greaterThan10(<span class="hljs-number">11</span>));</code>
+        </pre>  
+      </div>
+    </section>
+    <section class="slide" id="48">
+      <div>
+        <h2>Funções de Alta Ordem - Exemplo</h2>
+          <pre>            <code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unless</span><span class="hljs-params">(test, then)</span> </span>{
+  <span class="hljs-keyword">if</span> (!test) then();
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">repeat</span><span class="hljs-params">(times, body)</span> </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; times; i++) body(i);
+}
+
+repeat(<span class="hljs-number">3</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(n)</span> </span>{
+  unless(n % <span class="hljs-number">2</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">console</span>.log(n, <span class="hljs-string">"is even"</span>);
+  });
+});</code>
+          </pre>
+      </div>
+    </section>
+    <section class="slide" id="49">
+      <div>
+        <h2>Funções de Alta Ordem</h2>
+        <p>Funções de alta ordem são especialmente úteis em situações onde há transformação de dados</p>
+        <ul>
+          <li>Filtragem de elementos</li>
+          <li>Transformação de elementos</li>
+          <li>Sumarização de valores</li>
+          <li>Composição</li>
+        </ul>
+      </div>
+    </section>
+   <section class="slide" id="50">
+      <div>
+        <h2>Filtragem de Elementos</h2>
+        <p>Tem como objetivo filtrar elementos de uma coleção com base em um critério</p>
+        <p>Parâmetros devem ser a <b>coleção</b> e o próprio <b>critério</b></p>
+        <p>Se elemento não for aprovado no criétio, então é descartado</p>
+      </div>
+    </section>
+    <section class="slide" id="51">
+      <div>
+        <pre>          <code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">filter</span><span class="hljs-params">(array, test)</span> </span>{
+  <span class="hljs-keyword">var</span> passed = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">array</span>.length; i++) {
+    <span class="hljs-keyword">if</span> (test(<span class="hljs-keyword">array</span>[i]))
+      passed.push(<span class="hljs-keyword">array</span>[i]);
+  }
+  <span class="hljs-keyword">return</span> passed;
+}
+
+<span class="hljs-keyword">var</span> vet = [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-string">"6"</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>, <span class="hljs-string">"Nome"</span>, undefined];
+<span class="hljs-keyword">var</span> result = filter(vet, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(elem)</span> </span>{
+  <span class="hljs-keyword">return</span> elem % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>;
+});
+console.log(result);
+          </code>
+        </pre>
+    </div></section>
+    <section class="slide" id="52">
+      <div>
+        <h2>Transformação de Elementos</h2>
+        <p>Transforma os elementos de um array em outro array por meio de uma função de transformação</p>
+        <p>Parâmetros devem ser a <b>coleção</b> e a <b>função de transformação</b></p>
+      </div>
+    </section>
+    <section class="slide" id="53">
+      <div>
+        <pre>          <code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">map</span><span class="hljs-params">(array, transform)</span> </span>{
+  <span class="hljs-keyword">var</span> mapped = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">array</span>.length; i++)
+    mapped.push(transform(<span class="hljs-keyword">array</span>[i]));
+  <span class="hljs-keyword">return</span> mapped;
+}
+
+<span class="hljs-keyword">var</span> vet = [
+            {nome: <span class="hljs-string">"João"</span>, idade: <span class="hljs-number">28</span>}, 
+            {nome: <span class="hljs-string">"Vanessa"</span>, idade: <span class="hljs-number">35</span>}, 
+            {nome: <span class="hljs-string">"Carlos"</span>, idade: <span class="hljs-number">15</span>}
+          ];
+console.log(map(vet, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(person)</span> </span>{
+  <span class="hljs-keyword">return</span> person.nome;
+}));
+          </code>
+        </pre>
+    </div></section>
+    <section class="slide" id="54">
+      <div>
+        <h2>Sumarização de Elementos</h2>
+        <p>Sumariza os valores de uma coleção de modo a obter uma informação relevante</p>
+        <p>Parâmetros devem ser a <b>coleção</b> e a <b>função de sumarização</b></p>
+      </div>
+    </section>
+    <section class="slide" id="55">
+      <div>
+        <pre>          <code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reduce</span><span class="hljs-params">(array, combine, start)</span> </span>{
+  <span class="hljs-keyword">var</span> current = start;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">array</span>.length; i++)
+    current = combine(current, <span class="hljs-keyword">array</span>[i]);
+  <span class="hljs-keyword">return</span> current;
+}
+
+<span class="hljs-keyword">var</span> vet = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-keyword">var</span> result = reduce(vet, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a, b)</span> </span>{
+                <span class="hljs-keyword">return</span> a + b;
+              }, <span class="hljs-number">0</span>);
+console.log(result / vet.length);
+          </code>
+        </pre>
+    </div></section>
+    <section class="slide" id="56">
+      <div>
+        <h2>Composição</h2>
+        <p>Funções de alta ordem permitem a composição de funções</p>
+        <p>Dessa forma, você pode combinar as funções pré-existentes para criar processamentos totalmente customizados com mínimo esforço</p>
+      </div>
+    </section>
+    <section class="slide" id="57">
+      <div>
+        <pre>          <code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">average</span><span class="hljs-params">(array)</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">plus</span><span class="hljs-params">(a, b)</span> </span>{ <span class="hljs-keyword">return</span> a + b; }
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">array</span>.reduce(plus) / <span class="hljs-keyword">array</span>.length;
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">idade</span><span class="hljs-params">(p)</span> </span>{ <span class="hljs-keyword">return</span> p.idade; }
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">homem</span><span class="hljs-params">(p)</span> </span>{ <span class="hljs-keyword">return</span> p.sexo == <span class="hljs-string">"M"</span>; }
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mulher</span><span class="hljs-params">(p)</span> </span>{ <span class="hljs-keyword">return</span> p.sexo == <span class="hljs-string">"F"</span>; }
+
+<span class="hljs-keyword">var</span> vet = [
+            {nome: <span class="hljs-string">"João"</span>, idade: <span class="hljs-number">28</span>, sexo: <span class="hljs-string">"M"</span>}, 
+            {nome: <span class="hljs-string">"Vanessa"</span>, idade: <span class="hljs-number">35</span>, sexo: <span class="hljs-string">"F"</span>}, 
+            {nome: <span class="hljs-string">"Carlos"</span>, idade: <span class="hljs-number">15</span>, sexo: <span class="hljs-string">"M"</span>}
+          ];
+console.log(average(vet.filter(homem).map(idade)));
+console.log(average(vet.filter(mulher).map(idade)));
+          </code>
+        </pre>
+    </div></section>
+    <section class="slide" id="58">
+      <div>
+        <h2>Custo</h2>
+        <p>A flexibilidade e elegância das funções de alta ordem vêm a custo da eficiência do programa</p>
+        <p>Tais soluções são menos eficientes em termos de tempo e espaço</p>
+        <p>Motivo: adiciona-se camadas (chamadas de funções) desnecessárias para a manipulação direta do elemento</p>
+      </div>
+    </section>
+    <section class="slide" id="59">
+      <div>
+        <h2>Custo</h2>
+        <p>Contudo, geralmente tal perda não é percebida em uma aplicação web</p>
+        <ul>
+          <li>Quantidade de dados controlados</li>
+          <li>Otimizações dos compiladores existentes</li>
+          <li>Implementação em outras linguagens</li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide cover" onload="checkCookies();" id="60">
+      <div>
+        <h2>JavaScript &amp; DOM</h2>
+        <p>João Eduardo Montandon</p>
+        <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+      </div>
+    </section>
+    <section class="slide" id="61">
+      <div>
+        <h2>DOM: Document Object Model</h2>
+        <ul>
+          <li>Padrão para representar os objetos de um documento XML</li>
+          <li>Documento é representado por meio de uma árvore</li>
+          <li>Cada nó da árvore representa um elemento do documento</li>
+          <li>Permite visualizar toda estrutura do documento (organização,
+            hierarquização, etc.)</li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide" id="62">
+      <div class="container_12">
+        <h2>DOM: Documento Object Model</h2>
+        <div class="grid_4">
+          <pre>            <code style="font-size:0.4em;" class="hljs xml">
+<span class="hljs-doctype">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>My home page<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>My home page<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Hello, I am Marijn and this is my home page.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+      I also wrote a book! Read it
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://eloquentjavascript.net"</span>&gt;</span>here<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    .<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+            </code>
+          </pre>
+        </div>
+        <div class="grid_4">
+            <img src="./JavaScript_files/html-boxes.png" alt="">
+        </div>
+        <div class="grid_4">
+          <img src="./JavaScript_files/html-tree.png" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="63">
+      <div>
+        <h2>JavaScript &amp; DOM</h2>
+        <ul>
+          <li>JavaScript fornece meios para que alteremos o DOM</li>
+          <li>Dessa forma é possível implementar uma página com comportamento
+          dinâmico e fluído.</li>
+          <li>DOM pode ser acessado por meio da variável <code>document</code></li>
+        </ul>
+        <pre>          <code style="font-size:0.8em;" class="hljs coffeescript">
+<span class="hljs-reserved">var</span> link = <span class="hljs-built_in">document</span>.body.getElementsByTagName(<span class="hljs-string">"a"</span>)[<span class="hljs-number">0</span>];
+<span class="hljs-built_in">console</span>.log(link.href);
+          </code>
+        </pre>
+      </div>
+    </section>
+    <section class="slide" id="64">
+      <div class="container_12">
+        <h2>JS &amp; DOM: Navegando pela Estrutura</h2>
+        <div class="grid_7">
+          <ul>
+            <li>Todo nó existente no DOM possui uma série de atributos que
+              ajudam na navegação da árvore</li>
+            <li>Por meio desses atributos, podemos acessar os nós que são, filhos, pai,
+              e vizinhos de um determinado nó</li>
+          </ul>
+        </div>
+        <div class="grid_5">
+          <img src="./JavaScript_files/html-links.png" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="slideDomNav">
+      <div class="container_12">
+        <h2>JS &amp; DOM: Navegando pela Estrutura</h2>
+        <div class="grid_9">
+          <pre>            <code style="font-size: 0.6em;" class="hljs cs">
+<span class="hljs-function">function <span class="hljs-title">talksAbout</span><span class="hljs-params">(node, <span class="hljs-keyword">string</span>)</span> </span>{
+  <span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; node.childNodes.length; i++) {
+    <span class="hljs-keyword">var</span> childNode = node.childNodes[i];
+    <span class="hljs-keyword">if</span>(childNode.childNodes.length &gt; <span class="hljs-number">0</span>)
+      count += talksAbout(childNode, <span class="hljs-keyword">string</span>);
+    <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span><span class="hljs-params">(childNode.nodeValue != <span class="hljs-keyword">null</span> &amp;&amp;
+            childNode.nodeValue.indexOf(<span class="hljs-keyword">string</span>)</span> &gt; -1)
+      count ++</span>;
+  }
+  <span class="hljs-keyword">return</span> count;
+}
+            </code>
+          </pre>
+        </div>
+        <div class="grid_3">
+          <input type="text" id="txtDomNav" style="max-width:100%; font-size: 1.0em;">
+          <button name="btn_nav" onclick="triggerTalksAbout();">
+            Executar
+          </button>
+          <p id="nav_answer">
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="66">
+      <div>
+        <h2>JS &amp; DOM: Encontrando Elementos</h2>
+        <ul>
+          <li>Também é possível recuperar elementos diretamente, sem que seja
+          necessário percorrer toda a árvore do DOM:</li>
+          <ul>
+            <li><em>Me dê todos os nós que são links da página</em></li>
+            <li><em>Recupere o elemento que possui <code>id="footer"</code></em></li>
+            <li><em>Liste os elementos que possuem <code>class="lead"</code></em></li>
+          </ul>
+        </ul>
+      </div>
+    </section>
+    <section class="slide" id="67">
+      <div>
+        <h2>JS &amp; DOM: Encontrando Elementos</h2>
+          <pre>            <code class="hljs coffeescript">
+<span class="hljs-reserved">var</span> links = <span class="hljs-built_in">document</span>.body.getElementsByTagName(<span class="hljs-string">"a"</span>);
+
+<span class="hljs-reserved">var</span> header = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"header"</span>);
+
+<span class="hljs-reserved">var</span> slides = <span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">"slide"</span>);
+          </code>
+        </pre>
+      </div>
+    </section>
+    <section class="slide" id="68">
+      <div>
+        <h2>JS &amp; DOM: Alterando Elementos</h2>
+        <ul>
+          <li>Quase toda estrutura do DOM pode ser alterada dinamicamente</li>
+          <li>JavaScript provê algumas funções para tal:</li>
+          <ul>
+            <li><code>removeChild(child)</code></li>
+            <li><code>appendChild(child)</code></li>
+            <li><code>insertBefore(elem1, elem2)</code></li>
+          </ul>
+        </ul>
+      </div>
+    </section>
+    <section class="slide" id="69">
+      <div class="container_12">
+        <h2>JS &amp; DOM: Alterando Elementos</h2>
+        <div class="grid_8">
+          <pre>            <code style="font-size: 0.6em;" class="hljs xml">
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>One<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Two<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Three<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">var</span> paragraphs = <span class="hljs-built_in">document</span>.body.getElementsByTagName(<span class="hljs-string">"p"</span>);
+<span class="hljs-built_in">document</span>.body.insertBefore(paragraphs[<span class="hljs-number">2</span>], paragraphs[<span class="hljs-number">0</span>]);
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+            </code>
+          </pre>
+        </div>
+        <div class="grid_3 prefix_1" id="p_example" style="font-size: 0.8em;">
+          <p>One</p>
+          <p>Two</p>
+          <p>Three</p>
+          <br>
+          <br>
+          <button name="btn_p_example" onclick="p_example();">Teste!!</button>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="70">
+      <div class="container_12">
+        <h2>JS &amp; DOM: Criando Novos Elementos</h2>
+        <div class="grid_5" style="font-size:0.8em;">
+          <ul style="margin-bottom: 18px;">
+            <li>Existem 5 tipos de nós no HTML DOM:</li>
+            <ol>
+              <li>Element</li>
+              <li>Attribute</li>
+              <li>Text</li>
+              <li>Comment</li>
+              <li>Document</li>
+          </ol>
+          </ul>
+        </div>
+        <div class="grid_7">
+          <img src="./JavaScript_files/dom_htmltree.png" alt="">
+        </div>
+        <div class="grid_12" style="font-size:0.8em;">
+          <ul>
+            <li>Para se criar um elemento HTML novo, deve-se criar o respectivo
+              nó para este elemento (Element), junto de suas propriedades
+              (Attribute, Text)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="71">
+      <div class="container_12">
+        <h2>JS &amp; DOM: Criando Novos Elementos</h2>
+        <div class="grid_5">
+          <table style="font-size:0.8em;">
+            <thead>
+              <tr><td><strong>Funções</strong></td></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>createElement(elem)</code></td></tr>
+              <tr><td><code>createAttribute(attr)</code></td></tr>
+              <tr><td><code>createTextNode(text)</code></td></tr>
+              <tr><td><code>createComment(comm)</code></td></tr>
+              <tr><td><code>createDocumentFragment()</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid_7">
+          <pre>            <code style="font-size: 0.6em;" class="hljs coffeescript">
+<span class="hljs-reserved">var</span> p = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"p"</span>);
+<span class="hljs-reserved">var</span> node = <span class="hljs-built_in">document</span>.createTextNode(<span class="hljs-string">"This is new."</span>);
+<span class="hljs-reserved">var</span> attr = <span class="hljs-built_in">document</span>.createAttribute(<span class="hljs-string">"style"</span>);
+attr.value = <span class="hljs-string">"background-color:red;"</span>;
+p.setAttributeNode(attr);
+p.appendChild(node);
+<span class="hljs-reserved">var</span> element = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"div1"</span>);
+element.appendChild(p);
+            </code>
+          </pre>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="72">
+      <div>
+        <h2>JS &amp; DOM: Query Selectors</h2>
+        <ul>
+          <li>Também é possível selecionar elementos no DOM utilizando
+          o <em>selector syntax</em> (CSS)</li>
+          <li>Os elementos podem ser recuperados por meio de duas funções:</li>
+          <ol>
+            <li><code>querySelector(selector)</code>: Seleciona o primeiro
+              elemento que se encaixa na descrição de <code>selector</code></li>
+            <li><code>querySelectorAll(selector)</code>: Seleciona <b>todos</b> os
+            elementos que se encaixam na descrição de <code>selector</code></li>
+          </ol>
+        </ul>
+      </div>
+    </section>
+    <section class="slide" id="73">
+      <div>
+        <h2>JS &amp; DOM: Query Selectors</h2>
+          <pre>            <code style="font-size: 0.9em;" class="hljs javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">count</span><span class="hljs-params">(selector)</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">document</span>.querySelectorAll(selector).length;
+}
+<span class="hljs-built_in">console</span>.log(count(<span class="hljs-string">"p"</span>));
+<span class="hljs-built_in">console</span>.log(count(<span class="hljs-string">".slide"</span>));
+<span class="hljs-built_in">console</span>.log(count(<span class="hljs-string">"div ul"</span>));
+<span class="hljs-built_in">console</span>.log(count(<span class="hljs-string">"div &gt; ul"</span>));
+            </code>
+          </pre>
+      </div>
+    </section>
+    <section class="slide section" id="74">
+      <div>
+        <h2>JS &amp; DOM pt.2: Eventos</h2>
+      </div>
+    </section>
+    <section class="slide" id="75">
+      <div>
+        <h2>JS &amp; DOM pt.2: Eventos</h2>
+        <ul>
+          <li>HTML DOM fornece meios para executar trechos de código JavaScript
+            em determinadas condições</li>
+          <li>Dessa forma, podemos implementar funções JavaScript que respondam
+            a determinadas ações do usuário</li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide" id="76">
+      <div class="container_12">
+        <h2>JS &amp; DOM pt.2: Eventos</h2>
+        <div class="grid_8">
+          <pre>            <code style="font-size: 0.5em;" class="hljs xml">
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"example_box"</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"toggleColor();"</span>&gt;</span>
+Click me!!
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">var</span> color = <span class="hljs-string">"red"</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleColor</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> newColor = color == <span class="hljs-string">"red"</span> ? <span class="hljs-string">"blue"</span> : <span class="hljs-string">"red"</span>;
+  color = newColor;
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"example_box"</span>).style.backgroundColor = newColor;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+            </code>
+          </pre>
+        </div>
+        <div class="grid_4">
+          <div id="example_box" style="width:150px; height:150px; background-color: red;" onclick="toggleColor();">
+            <p>
+              Click me!!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="77">
+      <div>
+        <h2>JS &amp; DOM pt.2: Eventos</h2>
+        <p style="margin-bottom: 28px;">
+          Os eventos podem ser customizados de duas formas: (a) atributos HTML;
+          (b) HTML DOM;
+        </p>
+        <pre>          <code style="font-size:0.75em;" class="hljs xml">
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"displayDate()"</span>&gt;</span>Try it<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"myBtn"</span>).onclick = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{ displayDate() };
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+          </code>
+        </pre>
+      </div>
+    </section>
+    <section class="slide" id="78">
+      <div>
+        <h2>Eventos: onclick</h2>
+        <p>
+          Habilitado quando o usuário clica sobre o elemento
+        </p>
+        <div class="container_12">
+          <div class="grid_8" style="font-size: 0.6em;">
+            <pre>              <code class="hljs xml">
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"btn_onclick_example"</span>
+  <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"onclickExample();"</span>&gt;</span>Click me!!<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onclickExample</span><span class="hljs-params">()</span> </span>{
+  alert(<span class="hljs-string">"BOOOOOMMMM!!!"</span>);
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+              </code>
+            </pre>
+          </div>
+          <div class="grid_4">
+            <button name="btn_onclick_example" onclick="onclickExample();">Click me!!</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="79">
+      <div>
+        <h2>Eventos: onload &amp; onunload</h2>
+        <p style="margin-bottom: 18px;">
+          Disparado no momento em que o usuário entra e sai da página, respectivamente.
+        </p>
+        <div class="container_12">
+          <div class="grid_8" style="font-size: 0.4em;">
+            <pre>              <code class="hljs xml">
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">onload</span>=<span class="hljs-value">"checkCookies()"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"demo"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkCookies</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> text = <span class="hljs-string">""</span>;
+  <span class="hljs-keyword">if</span> (navigator.cookieEnabled == <span class="hljs-literal">true</span>) {
+    text = <span class="hljs-string">"Cookies are enabled."</span>;
+  } <span class="hljs-keyword">else</span> {
+    text = <span class="hljs-string">"Cookies are not enabled."</span>;
+  }
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"demo"</span>).innerHTML = text;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+              </code>
+            </pre>
+          </div>
+          <div class="grid_4">
+            <p id="demo">
+              Carregando...
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="80">
+      <div>
+        <h2>Eventos: onchange</h2>
+        <p>
+          Executado quando o valor de um elemento é modificado. Ideal para validação
+          de campos.
+        </p>
+        <div class="container_12">
+          <div class="grid_8" style="font-size: 0.59em;">
+            <pre>              <code class="hljs xml">
+Digite seu nome:<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"fname"</span> <span class="hljs-attribute">onchange</span>=<span class="hljs-value">"upperCase()"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">upperCase</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> x = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"fname"</span>);
+  x.value = x.value.toUpperCase();
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+              </code>
+            </pre>
+          </div>
+          <div class="grid_4">
+            Digite seu nome:<br>
+            <input type="text" id="fname" onchange="upperCase()" style="font-size:1.0em;">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="81">
+      <div>
+        <h2>Eventos: onmouseover &amp; onmouseout</h2>
+        <p style="margin-bottom: 18px;">
+          Disparado quando o mouse passa sobre o objeto.
+        </p>
+        <div class="container_12">
+          <div class="grid_8" style="font-size: 0.59em;">
+            <pre>              <code class="hljs xml">
+<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"images/chaves.jpg"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>
+    <span class="hljs-attribute">onmouseover</span>=<span class="hljs-value">"mOver(this)"</span> <span class="hljs-attribute">onmouseout</span>=<span class="hljs-value">"mOut(this)"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mOver</span><span class="hljs-params">(obj)</span> </span>{
+  obj.property.src = <span class="hljs-string">"images/pao_presunto.jpg"</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mOut</span><span class="hljs-params">(obj)</span> </span>{
+  obj.property.src = <span class="hljs-string">"images/chaves.jpg"</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+              </code>
+            </pre>
+          </div>
+          <div class="grid_4">
+            <div id="mouseover_example" style="width:300px; height:300px;">
+              <img src="./JavaScript_files/chaves.jpg" alt="" style="max-width:100%;" onmouseover="mOver(this)" onmouseout="mOut(this)">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="82">
+      <div>
+        <h2>Eventos: onmousedown &amp; onmouseup</h2>
+        <p style="margin-bottom: 18px;">
+          Disparado quando o usuário pressiona/solta o mouse em um determinado
+          elemento.
+        </p>
+        <div class="container_12">
+          <div class="grid_8" style="font-size: 0.45em;">
+            <pre>              <code class="hljs xml">
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">onmousedown</span>=<span class="hljs-value">"mDown(this)"</span> <span class="hljs-attribute">onmouseup</span>=<span class="hljs-value">"mUp(this)"</span>&gt;</span>Click Me<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mDown</span><span class="hljs-params">(obj)</span> </span>{
+  obj.style.backgroundColor = <span class="hljs-string">"#1ec5e5"</span>;
+  obj.innerHTML = <span class="hljs-string">"Solte Me"</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mUp</span><span class="hljs-params">(obj)</span> </span>{
+  obj.style.backgroundColor=<span class="hljs-string">"#D94A38"</span>;
+  obj.innerHTML=<span class="hljs-string">"AEWW!!"</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+              </code>
+            </pre>
+          </div>
+          <div class="grid_4">
+            <div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38;width:190px;height:60px;padding:20px;">
+              Click Me
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide" id="83">
+      <div>
+        <h2>Referências</h2>
+        <p>
+          <a href="http://eloquentjavascript.net/">Eloquent JavaScript, Marjin Haverbeke</a>
+        </p>
+        <p>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">
+            JavaScript Guide - Mozilla Developer Network</a>
+        </p>
+        <p>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">
+            JavaScript Reference - Mozilla Developer Network</a>
+        </p>
+        <p>
+          <a href="http://www.w3schools.com/js/">JavaScript Tutorial - w3schools</a>
+        </p>
+      </div>
+    </section>
+    <div class="progress"><div></div></div>
+  	<script src="./JavaScript_files/shower.min.js.download"></script>
+  	<script src="./JavaScript_files/highlight.pack.js.download"></script>
+  	<script>hljs.initHighlightingOnLoad();</script>
+    <script charset="utf-8">
+      function changeName() {
+        var name = prompt("Digite seu nome");
+        document.getElementById("userName").innerHTML = name;
+      }
+
+      function exampleVar1() {
+        var a = 42;
+        console.log("a= " + a);
+        a = "teste";
+        console.log("a= " + a);
+      }
+
+      function exampleVar2() {
+        var input;
+        if(input === undefined){
+          alert("undefined");
+        } else {
+          alert("defined");
+        }
+      }
+
+      function exampleVar3() {
+        if (true) {
+          var x = 5;
+        }
+        console.log(x);
+      }
+
+      function exampleVar4() {
+        var x = 7;
+        console.log("Antes da funcao: " + x);
+        function myFunction() {
+          var y = 21;
+          console.log("Na Funcao:" + x);
+          console.log("Na Funcao:" + y);
+        }
+        myFunction();
+        console.log("Depois da Funcao" + y);
+      }
+
+      function exampleVet() {
+        var nomes = ["Joao", "Maria", "Jose"];
+        var idade = [25, , 34];
+        var id = [1223, "RG25632", 19827];
+
+        for(i = 0; i < nomes.length; i++) {
+          console.log(nomes[i] + " " + idade[i] + " " + id[i]);
+        }
+      }
+    </script>
+    <script>
+    function talksAbout(node, string) {
+      var count = 0;
+        for (var i = 0; i < node.childNodes.length; i++) {
+          var childNode = node.childNodes[i];
+          if(childNode.childNodes.length > 0) {
+            count += talksAbout(childNode, string);
+          }
+          else if(childNode.nodeValue != null && childNode.nodeValue.indexOf(string) > -1) {
+            count ++;
+          }
+        }
+        return count;
+      }
+
+
+      function triggerTalksAbout() {
+        var string = document.getElementById("txtDomNav").value;
+        var count = talksAbout(document.body, string);
+        document.getElementById("nav_answer").innerHTML = "O termo " + string +
+        " aparece " + count + " vezes.";
+      }
+
+
+      function p_example() {
+        var paragraphs = document.getElementById("p_example").getElementsByTagName("p");
+        document.getElementById("p_example").insertBefore(paragraphs[2], paragraphs[0]);
+      }
+
+
+      var color = "red";
+      function toggleColor() {
+        var newColor = color == "red" ? "blue" : "red";
+        color = newColor;
+
+        document.getElementById("example_box").style.backgroundColor = newColor;
+      }
+
+
+      function onclickExample() {
+        alert("BOOOOOMMMM!!!");
+      }
+
+
+      function checkCookies() {
+        var text = "";
+        if (navigator.cookieEnabled == true) {
+          text = "Cookies are enabled.";
+        } else {
+          text = "Cookies are not enabled.";
+        }
+        document.getElementById("demo").innerHTML = text;
+      }
+
+
+      function upperCase() {
+        var x = document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+      }
+
+
+      function mOver(obj) {
+        obj.src = "images/pao_presunto.jpg";
+      }
+
+
+      function mOut(obj) {
+        obj.src = "images/chaves.jpg";
+      }
+
+
+      function mDown(obj) {
+        obj.style.backgroundColor = "#1ec5e5";
+        obj.innerHTML = "Solte Me";
+      }
+
+
+      function mUp(obj) {
+        obj.style.backgroundColor="#D94A38";
+        obj.innerHTML="AEWW!!";
+      }
+    </script>
+  
+
+<section class="live-region" role="region" aria-live="assertive" aria-relevant="additions" aria-label="Slide Content: Auto-updating"></section></body></html>
+
+  <script src="script.js"></script>
