@@ -1,11 +1,9 @@
 function IMGtoText(node){
-    var saida = [];
-    for (var i=0; i<node.childNodes.lenght; i++){
-        console.log("lOOOOOpsy");
-        var noFilho = node.childNodes[i];
-        if (noFilho.childNodes.lenght > 0) IMGtoText(noFilho, tagName);
-        else if (noFilho.nodeValue != null && noFilho.nodeValue.indexOf(tagName) > -1){
-            console.log(noFilho.nodeValue);
-        }
+    var ibagens = document.getElementsByTagName("img");
+    for (i=0; i<ibagens.length; i++){
+        var papai = ibagens[i].parentElement;
+        var txtzin = document.createTextNode(ibagens[i].alt);
+        papai.appendChild(txtzin);
+        papai.removeChild(ibagens[i]);
     }
 }
