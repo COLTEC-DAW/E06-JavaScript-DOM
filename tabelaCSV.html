@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Maaaan</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<textarea rows="7" cols="50"></textarea>
+		<button id="test">Clique aqui pra rodar o código</button>
+		<script type="text/javascript">
+			function translate(){
+				var table = document.body.getElementsByTagName("textarea")[0].value;
+				table = table.split("\n");
+				for (var i = 0; i < table.length; i++) {
+					table[i] = table[i].split(",");
+				}
+
+				var main = document.createElement("table");
+				main.setAttribute("border","1");
+				document.body.appendChild(main);
+
+				for (var i = 0; i < table.length; i++) {
+					var newLine = document.createElement("tr");
+					newLine.setAttribute("id",("row" + i));
+					document.getElementsByTagName("table")[0].appendChild(newLine);
+
+					for (var j = 0; j < table[i].length; j++) {
+						
+						if(i == 0){
+							newLine = document.createElement("th");
+							var text = document.createTextNode(table[i][j]);
+							newLine.appendChild(text);
+							document.getElementById("row" + i).appendChild(newLine);
+						} 
+						else{
+							newLine = document.createElement("td");
+							var text = document.createTextNode(table[i][j]);
+							newLine.appendChild(text);
+							document.getElementById("row" + i).appendChild(newLine);
+						}
+					}
+				}
+			}
+
+			document.getElementById("test").onclick = translate;
+		</script>
+	</body>
+</html>
