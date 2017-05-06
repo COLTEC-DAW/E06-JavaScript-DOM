@@ -73,13 +73,11 @@ var getByName = function(elem){
   var elemArray = []
   var search = function(father){
     if (father.tagName == elem){
-      console.log(father)
       elemArray.push(father)
     }
     (father.childNodes).forEach(search)
   }
   search(document)
-  console.log(elemArray)
   return (elemArray)
 }
 ```
