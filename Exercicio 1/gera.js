@@ -28,5 +28,4 @@ function gera(){
         }
         tbl.appendChild(linha);
 	}
-	 
 }

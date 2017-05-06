@@ -1,0 +1,1159 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>JavaScript</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="libs/shower/themes/bright/styles/screen.css">
+    <link rel="stylesheet" href="libs/highlight/styles/default.css">
+    <link rel="stylesheet" type="text/css" href="css/960gs.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body class="list">
+    <header class="caption">
+      <h1>JavaScript</h1>
+      <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+    </header>
+    <section class="slide cover" id="Cover">
+      <div>
+        <h2>JavaScript</h2>
+        <p>João Eduardo Montandon</p>
+        <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+        <img src="images/wallpaper_coltec_wide.png" alt="" />
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Introdução</h2>
+        <ul>
+          <li>Desenvolvida por Brendan Eich em 1995, então funcionário da Netscape</li>
+
+          <li>Objetivo: prover características "dinâmicas" ao browser</li>
+
+          <li>Linguagem de Programação <em>client-side</em> voltada para
+            navegadores web</li>
+
+          <li>Atualmente, utilizada para os mais diversos propósitos (web,
+            mobile, <em>server-side</em>, <em>client-side</em>)</li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Introdução</h2>
+        <ul>
+          <li>Principais características:</li>
+          <ul>
+            <li>Linguagem interpretada</li>
+            <li>Tipagem dinâmica</li>
+            <li>Sintaxe similar ao Java</li>
+            <li>Executada por qualquer browser atualmente</li>
+          </ul>
+        </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Introdução - Exemplos</h2>
+          <div class="container_12">
+            <div class="grid_6">
+              <p>
+                <button name="button" onclick="alert('Hello World')">Click me</button>
+              </p>
+            </div>
+            <div class="grid_6">
+              <p>
+                <button name="button1" onclick="changeName()">Click me again!!</button>
+              </p>
+              <p>
+                Seu nome é: <span id="userName"></span>
+              </p>
+            </div>
+          </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>JavaScript - Sintaxe</h2>
+        <ul>
+          <li>Similar a linguagem Java</li>
+          <li>Inclui as principais estruturas de programação (<code>if-else,
+            while, do-while, for, ...</code>)</li>
+          <li>Ponto-e-vírgula não é obrigatório, porém <b>altamente</b> recomendado</li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>JavaScript - Valores</h2>
+        <p style="margin-bottom: 18px;">
+          JavaScript reconhece 5 tipos de valores primitivos:
+        </p>
+        <table>
+          <thead>
+            <td>Tipo</td>
+            <td>Exemplo</td>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Numbers</td>
+              <td><code>3.14</code></td>
+            </tr>
+            <tr>
+              <td>Boolean</td>
+              <td><code>true | false</code></td>
+            </tr>
+            <tr>
+              <td>Strings</td>
+              <td><code>"Qualquer frase"</code></td>
+            </tr>
+            <tr>
+              <td><code>null</code></td>
+              <td><code>null</code>, duh!?</td>
+            </tr>
+            <tr>
+              <td><code>undefined</code></td>
+              <td>Valor indefinido</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>JavaScript - Variáveis</h2>
+        <p>
+          Em JavaScript, as variáveis são dinamicamente tipadas
+        </p>
+        <p>
+          Isto é, você declara uma variável com tipo <code>var</code>, e então o programa infere seu tipo durante a execução
+        </p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>JavaScript - Variáveis</h2>
+        <div class="container_12">
+          <div class="grid_6">
+            <button name="button" onclick="exampleVar1();">Exemplo 1</button>
+            <pre>
+              <code id="varEx1">
+var a = 42;
+console.log("a= " + a);
+a = "teste";
+console.log("a= " + a);
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            <button name="button" onclick="exampleVar2();">Exemplo 2</button>
+            <pre>
+              <code id="varEx2">
+var input;
+if(input === undefined){
+  alert("undefined");
+} else {
+  alert("defined");
+}
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Variáveis - Escopo</h2>
+        <p>
+          As variáveis possuem escopo <b>global</b> e <b>local</b>.
+        </p>
+        <ul>
+          <li>Local: Quando definidas dentro de qualquer função</li>
+          <li>Global: Quando definidas fora de uma função</li>
+        </ul>
+        <p class="note">
+          JavaScript não possui escopo de bloco. Uma variável declarada em um
+          bloco local é visível para a função que contém este bloco.
+        </p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Variáveis - Escopo</h2>
+        <div class="container_12">
+          <div class="grid_6">
+            <button name="button" onclick="exampleVar3();">Exemplo</button>
+            <pre>
+              <code>
+if (true) {
+  var x = 5;
+}
+console.log(x);
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            <button name="button" onclick="exampleVar4();">Exemplo</button>
+            <pre>
+              <code>
+var x = 7;
+console.log("Antes da funcao: " + x);
+function myFunction() {
+  var y = 21;
+  console.log("Na Funcao:" + x);
+  console.log("Na Funcao:" + y);
+}
+myFunction();
+console.log("Depois da Funcao" + y);
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Variáveis - Constantes</h2>
+        <p>
+          Variáveis read-only. Devem ser criadas utilizando a palavra reservada
+          <code>const</code>.
+        </p>
+        <div class="container_12">
+          <div class="grid_4">
+            <pre>
+              <code>
+const c = 5.15;
+console.log(c);
+              </code>
+            </pre>
+          </div>
+          <div class="grid_4">
+            <pre>
+              <code>
+function f() {};
+const f = 5;
+console.log(f);
+              </code>
+            </pre>
+          </div>
+          <div class="grid_4">
+            <pre>
+              <code>
+const f = 5;
+console.log(f);
+f = 3.14;
+console.log(f);
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2 style="margin-bottom: 18px;">Variáveis - Vetores</h2>
+        <p style="margin-bottom: 18px;">
+          Os vetores podem ter elementos de vários tipos. Caso não seja declarado
+          um valor para uma determinada posição, o elemento assumirá o valor
+          <code>undefined</code>
+        </p>
+        <pre>
+          <code>
+var nomes = ["Joao", "Maria", "Jose"];
+var idade = [25, , 34];
+var id = [1223, "RG25632", 19827];
+
+for(i = 0; i &lt; nomes.length; i++) {
+  console.log(nomes[i] + " " + idade[i] + " " + id[i]);
+}
+          </code>
+        </pre>
+        <p>
+          <button name="button" onclick="exampleVet();">
+            Exemplo</button>
+        </p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2 style="margin-bottom: 18px;">JavaScript - Operadores</h2>
+        <ul style="margin-bottom: 18px; font-size:0.9em;">
+          <li>Basicamente, utilizam-se os mesmos operadores que são utilizados em
+            Java e C/C++.</li>
+          <li>Detalhe para o comportamento dos operadores de comparação, como
+            pode ser visto na tabela abaixo:</li>
+        </ul>
+        <table style="font-size: 0.8em;">
+          <thead>
+            <tr>
+              <td>Operador</td><td>Função</td><td>Exemplos verdadeiros</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>==</td><td>Igual</td><td>"3" == 3</td>
+            </tr>
+            <tr>
+              <td>!=</td><td>Diferente</td><td>var != 3</td>
+            </tr>
+            <tr>
+              <td>===</td><td>Estritamente Igual (tipo e valor)</td><td> 3 === 3</td>
+            </tr>
+            <tr>
+              <td>!==</td><td>Estritamente Diferente</td><td>"3" !== 3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>JavaScript - Estruturas de Controle</h2>
+          <p>JavaScript possui as duas estruturas de controle convencionais:
+          <code>if</code>'s e <code>switch</code>'s</p>
+          <p>Nota: <code>switch</code> pode ser feito com qualquer tipo
+            primitivo</p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>JavaScript - Estruturas de Controle</h2>
+         <div class="container_12" style="font-size: 0.7em;">
+          <div class="grid_7">
+            <pre>
+              <code>
+var login = prompt("Digite seu login");
+if(login == "admin") {
+  alert("login realizado com sucesso");
+} else {
+  alert("Falha na autenticação. Deseja tentar novamente?");
+}
+              </code>
+            </pre>
+          </div>
+          <div class="grid_5">
+            <pre>
+              <code>
+var role = prompt("Digite seu cargo");
+switch(role) {
+  case "admin":
+  alert("Administrador");
+  break;
+  case "dev":
+  alert("Desenvolvedor");
+  break;
+  case "test":
+  alert("Tester");
+  break;
+  default:
+  alert("Não disponível");
+}
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>JavaScript - Estruturas de Repetição</h2>
+        <p>
+          JavaScript posssui as principais estruturas de repetição:
+          <code>while</code>, <code>do-while</code>, e <code>for</code>.
+        </p>
+        <div class="container_12">
+          <div class="grid_4">
+            <pre>
+              <code>
+var i = 0;
+while(true) {
+  console.log(i);
+  i++;
+}
+              </code>
+            </pre>
+          </div>
+          <div class="grid_4">
+            <pre>
+              <code>
+var i = 0;
+do {
+  console.log(i % 10);
+  i++;
+}while(i%10 != 9);
+              </code>
+            </pre>
+          </div>
+          <div class="grid_4">
+            <pre>
+              <code>
+for(i = 0; i &lt; 30; i++) {
+  console.log(i);
+}
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide section">
+      <div>
+        <h2>JavaScript: Funções</h2>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Funções</h2>
+          <ul>
+            <li>Um dos recursos mais poderosos da linguagem</li>
+            <li>Sintaxe básica: <code>function funcao(arg1, arg2, ..., argN)</code></li>
+            <li>Uso de <code>return</code> é opcional</li>
+            <li>Podem ser atribuída a variáveis</li>
+          </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Funções - Declaração</h2>
+        <p>
+          Funções podem ser declaradas de duas formas:
+        </p>
+        <div class="container_12">
+          <div class="grid_6">
+            <pre>
+              <code>
+function square(number) {
+  return number * number;
+}
+console.log(square(4));
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            <pre>
+              <code>
+var square = function(number) {
+  return number * number;
+}
+console.log(square(4));
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Funções - Parâmetros</h2>
+        <ul>
+          <li>Não é necessário especificar o tipo do parâmetro (<code>var</code>)</li>
+          <li>Tipos primitivos: Passagem por valor</li>
+          <li>Objetos: Passagem por referência</li>
+          <li>Caso sejam passados mais argumentos que o necessário, os demais são
+            desconsiderados</li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Funções - Parâmetros</h2>
+        <div class="container_12">
+          <div class="grid_6">
+            <pre>
+              <code>
+var square = function(number) {
+  return number * number
+};
+var x = square(4);
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            <pre>
+              <code>
+function transform(vetor) {
+  for(i = 0; i &lt; vetor.length; i++) {
+    vetor[i] = vetor[i].toUpperCase();
+  }
+};
+var vetor = ["a", "B", "c"];
+console.log(vetor);
+transform(vetor, "5");
+console.log(vetor);
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Funções - Escopo</h2>
+        <ul>
+          <li>Como já dito anteriormente, JavaScript delimita escopo por funções
+            (não por blocos)</li>
+          <li>Variáveis locais: variáveis recebidas como parâmetro ou declaradas
+            por meio de <code>var</code></li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="container_12">
+        <h2>Funções - Escopo</h2>
+        <div class="grid_6">
+          <pre>
+            <code>
+var x = "outside";
+
+var f1 = function() {
+  var x = "inside f1";
+};
+f1();
+console.log(x);
+            </code>
+          </pre>
+        </div>
+        <div class="grid_6">
+          <pre>
+            <code>
+var x = "outside";
+
+var f2 = function() {
+  x = "inside f2";
+};
+f2();
+console.log(x);
+            </code>
+          </pre>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Funções - Escopo Aninhado</h2>
+        <p>JavaScript permite a criação de funções aninhadas</p>
+        <p>Neste caso, o escopo da função se limita ao nível em que ela
+        foi declarada</p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          Funções - Escopo Aninhado
+        </h2>
+        <div class="container_12" style="font-size: 0.9em;">
+          <div class="grid_8">
+            <pre>
+          <code>
+var landscape = function() {
+  var result = "";
+  var flat = function(size) {
+    for (var count = 0; count &lt; size; count++)
+    result += "_";
+  };
+  var mountain = function(size) {
+    result += "/";
+    for (var count = 0; count &lt; size; count++)
+    result += "'";
+    result += "\\";
+  };
+          </code>
+        </pre>
+          </div>
+          <div class="grid_4">
+            <pre>
+              <code>
+  flat(3);
+  mountain(4);
+  flat(6);
+  mountain(1);
+  flat(1);
+  return result;
+};
+console.log(landscape());
+</code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Funções como valores</h2>
+        <ul>
+          <li>Uma das formas de declarar funções é através da forma anônima:</li>
+            <p>
+              <pre><code>var fac = function (n) { return n &lt; 2 ? 1 : n*fac(n-1) }</code></pre>
+            </p>
+          <li>Se uma função pode ser armazenada em uma variável, então podemos
+              manipulá-la como uma variável</li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="container_12">
+        <h2>Funções como valores</h2>
+        <div class="grid_12">
+          <pre>
+            <code>
+function map(f,a) {
+  var result = [], i;
+  for (i = 0; i != a.length; i++)
+    result[i] = f(a[i]);
+  return result;
+}
+var mapping = function(x) {
+  return x * x * x
+};
+map(mapping, [0, 1, 2, 5, 10]);
+            </code>
+          </pre>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Funções <em>built-in</em></h2>
+        <table style="font-size:0.9em;">
+          <thead>
+            <tr><td>Nome</td><td>Funcionalidade</td></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>eval(str)</code></td><td>Interpreta uma string como trecho de código JavaScript</td></tr>
+            <tr><td><code>isFinite(number)</code></td><td>Verifica se um número é finito</td></tr>
+            <tr><td><code>isNaN(testValue)</code></td><td>Verifica se o valor é NaN</td></tr>
+            <tr><td><code>parseFloat(str)</code></td><td>Converte uma String para float</td></tr>
+            <tr><td><code>parseInt(str)</code></td><td>Converte uma String para Int</td></tr>
+            <tr><td><code>Number(objRef)</code></td><td>Converte um Objeto para Número</td></tr>
+            <tr><td><code>String(objRef)</code></td><td>Converte um Objeto para String</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!--       JavaScript: Objetos e Arrays      -->
+    <header class="caption">
+      <h1>JavaScript</h1>
+      <h2>Estrutura de Dados: Objetos e Arrays</h2>
+      <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+    </header>
+    <section class="slide cover">
+      <div>
+        <h2>JavaScript</h2>
+        <h3>Estrutura de Dados: Objetos e Arrays</h3>
+        <p>João Eduardo Montandon</p>
+        <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Introdução</h2>
+        <p><code>Number</code>s, <code>boolean</code>s, e <code>string</code>s representam simples tipos de dados</p>
+        <p><b>Como representar tipos mais complexos?</b></p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Vetores</h2>
+        <p><b>Opção 01:</b> usar um vetor para armazenar as propriedades do objeto</p>
+        <p><b>Vetores:</b> Estrutura de dados que permite armazenar uma coleção de valores</p>
+        <p>Pode-se armazenar valores de qualquer tipo</p>
+        <p>Objetos podem ser recuperados por meio de seu índice</p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Vetores</h2>
+          <ul>
+            <li>Declaração: <code>var meuArray = [0, 10, "vinte"]</code></li>
+            <li>Uso: <code>console.log(meuArray[2])</code></li>
+          </ul>
+          <div class="container_12">
+            <div class="grid_6">
+              <pre>
+                <code>var carro = [];
+carro[0] = "Fiat";
+carro[1] = "Uno";
+carro[2] = 2015;
+                </code>
+              </pre>
+            </div>
+            <div class="grid_6">
+              <pre>
+                <code>console.log("Marca: " + carro[0]);
+console.log("\nModelo: " + carro[1]);
+console.log("\nAno: " + carro[2]);
+                </code>
+              </pre>
+            </div>
+          </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Vetores - Funções & Propriedades</h2>
+        <p>Os vetores tem uma série de funções e propriedades</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Função/Propriedade</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>length</code></td>
+              <td>Acessa tamanho do array</td>
+            </tr>
+            <tr>
+              <td><code>push(var)</code></td>
+              <td>empilha um elemento no array</td>
+            </tr>
+            <tr>
+              <td><code>pop()</code></td>
+              <td>Desempilha um elemento do array</td>
+            </tr>
+            <tr>
+              <td><code>join("str")</code></td>
+              <td>Concatena os elementos do array</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Vetores - Funções & Propriedades</h2>
+        <div class="container_12">
+          <div class="grid_6">
+            <pre>
+              <code>
+var mack = [];
+mack.push("Mack");
+mack.push("the", "Knife");
+console.log(mack);
+// ["Mack", "the", "Knife"]
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            <pre>
+              <code>
+console.log(mack.join(" "));
+// Mack the Knife
+console.log(mack.pop());
+// Knife
+console.log(mack);
+// ["Mack", "the"]
+              </code>
+            </pre>            
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Objetos</h2>
+        <p><b>Opção 02: </b> Utilizar um <code>object</code> para armazenar seus valores</p>
+        <p><code>object</code>: estrutura de dados que permite manipular uma coleção arbitrária de valores</p>
+        <p>Os valores são inseridos, lidos e excluídos por meio do nome que lhe é dado</p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Objetos</h2>
+        <ul>
+          <li>Declaração: <code>var meuObjeto = { ... }</code></li>
+          <li>Uso: <code>console.log(meuObjeto.minhaPropriedade)</code></li>
+        </ul>
+        <div class="container_12">
+          <div class="grid_6">
+            <pre>
+              <code>var meuCarro = {
+  marca: "Fiat",
+  modelo: "Uno",
+  ano: [2014, 2015],
+  usado: false
+};
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            <pre>
+              <code>console.log(meuCarro.marca);
+console.log(meuCarro.modelo);
+meuCarro.usado = true;
+console.log(meuCarro.usado);
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Objetos - Propriedades</h2>
+        <p>Leitura de propriedades inexistentes retornam <code>undefined</code></p>
+        <p>Novas propriedades podem ser adicionadas dinamicamente: <code>obj.novaPropriedade = novoValor</code></p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Objetos - Operadores unários</h2>
+        <p>Os objetos possuem alguns operadores unários para lidar com suas propriedades</p>
+        <table style="font-size: 0.9em;">
+          <thead>
+            <tr>
+              <th>Operador</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>delete obj.prop</code></td>
+              <td>Deleta uma determinada propriedade <em>prop</em></td>
+            </tr>
+            <tr>
+              <td><code>"prop" in obj</code></td>
+              <td>Verifica se um objeto possui uma propriedade <em>"prop"</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Objetos - Mutabilidade</h2>
+        <p>Diferentemente dos tipos primitivos, objetos são <b>mutáveis</b></p>
+        <p>Para se mudar, basta mudar uma de suas propriedades</p>
+        <p>Para se comparar objetos, utilizamos o operador <code>==</code></p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Objetos - Mutabilidade</h2>
+        <pre>
+          <code>var object1 = {value: 10};
+var object2 = object1;
+var object3 = {value: 10};
+
+console.log(object1 == object2); // true
+console.log(object1 == object3); // false
+
+object1.value = 15;
+console.log(object2.value); // 15
+console.log(object3.value); // 10
+          </code>
+        </pre>
+      </div>
+    </section>
+    <!--        JavaScript: Funções de Alta Ordem         -->
+    <header class="caption">
+      <h1>JavaScript</h1>
+      <h2>Funções de Alta Ordem</h2>
+      <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+    </header>
+    <section class="slide cover">
+      <div>
+        <h2>JavaScript</h2>
+        <h3>Funções de Alta Ordem</h3>
+        <p>João Eduardo Montandon</p>
+        <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Introdução</h2>
+        <p>Uma das grandes vantagens das linguagens estruturadas é a capacidade de <b>abstração</b></p>
+        <p>Abstração: capacidade de "mostrar" apenas o suficiente ao desenvolvedor</p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Introdução</h2>
+        <p>As linguagens Estruturadas e Orientadas a Objeto nos dá a possibilidade de abstrair dados</p>
+        <p>Mas, algumas vezes essas linguagens <b>falham</b> miseralvemente em prover certas abstrações...</p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Introdução - Exemplo</h2>
+        <pre>
+          <code>function logEach(array) {
+for (var i = 0; i < array.length; i++)
+  console.log(array[i]);
+}
+logEach(["Wampeter", "Foma", "Granfalloon"]);</code>
+        </pre>
+        <p><b>Mas e se eu quiser fazer algo diferente de logging??</b></p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Introdução - Exemplo: The JS way</h2>
+        <pre>
+          <code>function forEach(array, action) {
+  for (var i = 0; i < array.length; i++)
+    action(array[i]);
+}
+
+forEach(["Wampeter", "Foma", "Granfalloon"], console.log);</code>
+        </pre>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Funções de Alta Ordem</h2>
+        <p>São funções que "trafegam" outras funções em suas chamadas, seja por parâmetro ou retorno</p>
+        <p>Em outras palavras... capacidade de lidar com funções como valores</p>
+        <p><b>Principal Benefício: Permitir abstrações sobre ações, não apenas valores</b></p> 
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Funções de Alta Ordem - Exemplo</h2>
+        <pre>
+          <code>function greaterThan(n) {
+  return function(m) { return m > n; };
+}
+
+var greaterThan10 = greaterThan(10);
+console.log(greaterThan10(11));</code>
+        </pre>  
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Funções de Alta Ordem - Exemplo</h2>
+          <pre>
+            <code>function unless(test, then) {
+  if (!test) then();
+}
+function repeat(times, body) {
+  for (var i = 0; i < times; i++) body(i);
+}
+
+repeat(3, function(n) {
+  unless(n % 2, function() {
+    console.log(n, "is even");
+  });
+});</code>
+          </pre>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Funções de Alta Ordem</h2>
+        <p>Funções de alta ordem são especialmente úteis em situações onde há transformação de dados</p>
+        <ul>
+          <li>Filtragem de elementos</li>
+          <li>Transformação de elementos</li>
+          <li>Sumarização de valores</li>
+          <li>Composição</li>
+        </ul>
+      </div>
+    </section>
+   <section class="slide">
+      <div>
+        <h2>Filtragem de Elementos</h2>
+        <p>Tem como objetivo filtrar elementos de uma coleção com base em um critério</p>
+        <p>Parâmetros devem ser a <b>coleção</b> e o próprio <b>critério</b></p>
+        <p>Se elemento não for aprovado no criétio, então é descartado</p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <pre>
+          <code>function filter(array, test) {
+  var passed = [];
+  for (var i = 0; i < array.length; i++) {
+    if (test(array[i]))
+      passed.push(array[i]);
+  }
+  return passed;
+}
+
+var vet = [2, 4, "6", 8, 10, "Nome", undefined];
+var result = filter(vet, function(elem) {
+  return elem % 2 == 0;
+});
+console.log(result);
+          </code>
+        </pre>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Transformação de Elementos</h2>
+        <p>Transforma os elementos de um array em outro array por meio de uma função de transformação</p>
+        <p>Parâmetros devem ser a <b>coleção</b> e a <b>função de transformação</b></p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <pre>
+          <code>function map(array, transform) {
+  var mapped = [];
+  for (var i = 0; i < array.length; i++)
+    mapped.push(transform(array[i]));
+  return mapped;
+}
+
+var vet = [
+            {nome: "João", idade: 28}, 
+            {nome: "Vanessa", idade: 35}, 
+            {nome: "Carlos", idade: 15}
+          ];
+console.log(map(vet, function(person) {
+  return person.nome;
+}));
+          </code>
+        </pre>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Sumarização de Elementos</h2>
+        <p>Sumariza os valores de uma coleção de modo a obter uma informação relevante</p>
+        <p>Parâmetros devem ser a <b>coleção</b> e a <b>função de sumarização</b></p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <pre>
+          <code>function reduce(array, combine, start) {
+  var current = start;
+  for (var i = 0; i < array.length; i++)
+    current = combine(current, array[i]);
+  return current;
+}
+
+var vet = [1, 2, 3, 4];
+var result = reduce(vet, function(a, b) {
+                return a + b;
+              }, 0);
+console.log(result / vet.length);
+          </code>
+        </pre>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Composição</h2>
+        <p>Funções de alta ordem permitem a composição de funções</p>
+        <p>Dessa forma, você pode combinar as funções pré-existentes para criar processamentos totalmente customizados com mínimo esforço</p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <pre>
+          <code>function average(array) {
+  function plus(a, b) { return a + b; }
+  return array.reduce(plus) / array.length;
+}
+function idade(p) { return p.idade; }
+function homem(p) { return p.sexo == "M"; }
+function mulher(p) { return p.sexo == "F"; }
+
+var vet = [
+            {nome: "João", idade: 28, sexo: "M"}, 
+            {nome: "Vanessa", idade: 35, sexo: "F"}, 
+            {nome: "Carlos", idade: 15, sexo: "M"}
+          ];
+console.log(average(vet.filter(homem).map(idade)));
+console.log(average(vet.filter(mulher).map(idade)));
+          </code>
+        </pre>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Custo</h2>
+        <p>A flexibilidade e elegância das funções de alta ordem vêm a custo da eficiência do programa</p>
+        <p>Tais soluções são menos eficientes em termos de tempo e espaço</p>
+        <p>Motivo: adiciona-se camadas (chamadas de funções) desnecessárias para a manipulação direta do elemento</p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Custo</h2>
+        <p>Contudo, geralmente tal perda não é percebida em uma aplicação web</p>
+        <ul>
+          <li>Quantidade de dados controlados</li>
+          <li>Otimizações dos compiladores existentes</li>
+          <li>Implementação em outras linguagens</li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Referências</h2>
+        <p>
+          <a href="http://eloquentjavascript.net/">Eloquent JavaScript, Marjin Haverbeke</a>
+        </p>
+        <p>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">
+            JavaScript Guide - Mozilla Developer Network</a>
+        </p>
+        <p>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">
+            JavaScript Reference - Mozilla Developer Network</a>
+        </p>
+        <p>
+          <a href="http://www.w3schools.com/js/">JavaScript Tutorial - w3schools</a>
+        </p>
+      </div>
+    </section>
+    <div class="progress"><div></div></div>
+  	<script src="libs/shower/shower.min.js"></script>
+  	<script src="libs/highlight/highlight.pack.js"></script>
+  	<script>hljs.initHighlightingOnLoad();</script>
+    <script charset="utf-8">
+      function changeName() {
+        var name = prompt("Digite seu nome");
+        document.getElementById("userName").innerHTML = name;
+      }
+
+      function exampleVar1() {
+        var a = 42;
+        console.log("a= " + a);
+        a = "teste";
+        console.log("a= " + a);
+      }
+
+      function exampleVar2() {
+        var input;
+        if(input === undefined){
+          alert("undefined");
+        } else {
+          alert("defined");
+        }
+      }
+
+      function exampleVar3() {
+        if (true) {
+          var x = 5;
+        }
+        console.log(x);
+      }
+
+      function exampleVar4() {
+        var x = 7;
+        console.log("Antes da funcao: " + x);
+        function myFunction() {
+          var y = 21;
+          console.log("Na Funcao:" + x);
+          console.log("Na Funcao:" + y);
+        }
+        myFunction();
+        console.log("Depois da Funcao" + y);
+      }
+
+      function exampleVet() {
+        var nomes = ["Joao", "Maria", "Jose"];
+        var idade = [25, , 34];
+        var id = [1223, "RG25632", 19827];
+
+        for(i = 0; i < nomes.length; i++) {
+          console.log(nomes[i] + " " + idade[i] + " " + id[i]);
+        }
+      }
+    </script>
+  </body>
+</html>
