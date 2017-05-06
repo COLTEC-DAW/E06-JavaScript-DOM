@@ -66,7 +66,8 @@ Faça o teste com o código HTML da matéria. Quantos `<section>` existem? Quant
 
 *Dica: Você deverá navegar manualmente pelo DOM e verificar a propriedade tagName de cada elemento*
 
-#### Resposta
+#### Resposta(s)
+
 ```javascript
 var getByName = function(elem){
   var elemArray = []
@@ -82,6 +83,9 @@ var getByName = function(elem){
   return (elemArray)
 }
 ```
+84, 4, 6. Essas são as respostas dos caso de teste pedido, respectivamente
+![RespostaQ2](scrshtQ2.png)
+
 
 ### Um texto vale mais que mil imagens...
 
