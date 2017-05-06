@@ -86,3 +86,18 @@ var getByName = function(elem){
 ### Um texto vale mais que mil imagens...
 
 Implemente um código JavaScript que, ao ser executado, substitua toda imagem de uma página HTML por seu respectivo texto de descrição.
+#### Resposta
+
+```javascript
+// obs que para usar esta função, é necessário usar a função da questão 2
+var imagesToText = function(){
+  var substituicao = function(item){
+    item.parentElement.insertBefore(document.createTextNode(item.alt), item)
+    item.parentElement.removeChild(item)
+
+  }
+  imagens = getByName("IMG")
+  imagens.forEach(substituicao)
+}
+```
+
