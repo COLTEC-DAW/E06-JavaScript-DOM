@@ -66,6 +66,23 @@ Faça o teste com o código HTML da matéria. Quantos `<section>` existem? Quant
 
 *Dica: Você deverá navegar manualmente pelo DOM e verificar a propriedade tagName de cada elemento*
 
+#### Resposta
+```javascript
+var getByName = function(elem){
+  var elemArray = []
+  var search = function(father){
+    if (father.tagName == elem){
+      console.log(father)
+      elemArray.push(father)
+    }
+    (father.childNodes).forEach(search)
+  }
+  search(document)
+  console.log(elemArray)
+  return (elemArray)
+}
+```
+
 ### Um texto vale mais que mil imagens...
 
 Implemente um código JavaScript que, ao ser executado, substitua toda imagem de uma página HTML por seu respectivo texto de descrição.
