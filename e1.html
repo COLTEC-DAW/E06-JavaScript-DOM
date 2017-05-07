@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+         <title>Exercicio 1 DOM</title>
+         <script>
+          function tableHTML() {
+            var x = document.getElementById("tableCSV");
+            var arr = x.value.split("\n"); 
+            var x = document.createElement("table");
+            document.getElementById("agr").appendChild(x);  
+            var arr2 = "";
+
+            for (i = 0; i < arr.length; i++) {
+              var a = document.createElement("tr"); 
+              x.appendChild(a); 
+              var arr2 = arr[i]; 
+              var arr3 = arr2.split(",");
+                 for(j=0; j<arr3.length; j++) {
+                   var b = document.createElement("td");
+                   var t = document.createTextNode(arr3[j]);  
+                    a.appendChild(b);
+                    b.appendChild(t);
+                 }
+
+            }
+
+            
+          }
+          </script>
+          <style>
+            table, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            td {
+                padding: 5px;
+                text-align: left;    
+            }
+</style>
+</head>
+
+<body>
+Digite sua tabela:<br>
+	
+<textarea wrap="off" id="tableCSV" cols="30" rows="5" ></textarea>
+<button type="button" onclick="tableHTML()">Clique</button>
+<output id="agr"> </output>
+
+
+</body>
+<html> 
