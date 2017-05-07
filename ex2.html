@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+         <title>Exercicio 12 DOM</title>
+         <script>
+            function exerc() {
+            var x = document.getElementById("tag"); 
+            var nodelist =  document.querySelectorAll(x.value); 
+            var fim = [];
+            
+           
+            for(i=0; i<nodelist.length; i++) {
+                var item = nodelist[i];
+                res = item.toString();
+                document.write(res);
+                
+            }
+
+
+            }
+         </script>
+</head>
+<body>
+<p> Digite a tag que deseja pesquisar </p>
+<input type="text" id="tag" onchange="exerc()">
+
+<p id="try"> oi galera </p>
+<a href=""> hello </a>
+
+
+
+</body>
+</html>
