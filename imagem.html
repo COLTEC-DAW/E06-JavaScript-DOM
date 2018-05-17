@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Um texto vale mais que mil imagens</title>
+
+    <style>
+        img{
+            width: 400px;
+            height: 300px;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="http://www.bandeirasnacionais.com/data/flags/big/br.png" alt="Olá mundo">
+    </div>
+
+    <div>
+        <img src="https://s1.static.brasilescola.uol.com.br/artigos/bandeira-dos-estados-unidos-4f104e05ac964.jpg?i=https://brasilescola.uol.com.br/upload/conteudo/images/bandeira-dos-estados-unidos-4f104e05ac964.jpg&w=600&h=350&c=FFFFFF&t=1" alt="Hello World">
+    </div>
+    <div>
+        <img src="http://geo5.net/imagens/Bandeira-da-Alemanha-2000px.png" alt="Hallo Welt">
+    </div>
+
+    <button onclick="substitui()">Um texto vale mais que mil imagens</button>
+
+    <script>
+        function substitui(){
+            var imagens = document.getElementsByTagName("IMG");
+            var size = imagens.length;
+            for(var i=0; i<size; i++){
+                var p = document.createElement("p");
+                var descricao = document.createTextNode(imagens[0].alt);
+                imagens[0].parentNode.appendChild(descricao);
+                imagens[0].parentNode.removeChild(imagens[0]);
+            }
+        }
+    </script>
+</body>
+</html>
