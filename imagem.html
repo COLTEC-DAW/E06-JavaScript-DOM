@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <title>Imagem</title>
+</head>
+<body>
+    
+    <div>
+        <nav class="navbar navbar-dark bg-primary">
+            <h1 class="h3 text-white mx-auto">Um texto vale mais que mil imagens...</h1>
+        </nav>
+    </div>
+
+    <div class="d-flex justify-content-center mt-5">
+        <img src="fullmetal.jpg" width="400px" height="400px" class="rounded border mx-auto" alt="Fullmetal Alchemist: Brotherhood">
+        <img src="ghost-hound.png" width="400px" height="400px" class="rounded border " alt="Ghost Hound">
+        <img src="sword-art-online.jpg" width="400px" height="400px" class="rounded border mx-auto" alt="Sword Art Online">
+    </div>
+
+
+    <div class="d-flex justify-content-center mt-5">
+        <button type="button" class="btn btn-success font-weight-bold py-3 px-5" onclick="transforma()">Transformar</button>
+    </div>
+
+    <p id="pa0"></p>
+    <p id="pa1"></p>
+    <p id="pa2"></p>
+
+    <script>
+        var transforma;
+
+        transforma = function () {
+            var imagens = document.getElementsByTagName("IMG");
+            var tamanhoFixo = imagens.length;
+
+            for (let i = 0; i < tamanhoFixo; i++) {
+                var texto = document.createElement("h5");
+
+                var attr = document.createAttribute("class");
+                attr.value = "mx-auto mt-5 pt-5 mb-5 mt-5";
+                texto.setAttributeNode(attr);
+
+                var altImagem = document.createTextNode(imagens[0].alt);
+
+                texto.appendChild(altImagem);
+                imagens[0].parentElement.replaceChild(texto, imagens[0]);
+            }
+        }
+    </script>
+
+</body>
+</html>

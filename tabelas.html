@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <title>Tabelas</title>
+</head>
+<body>
+
+    <div>
+        <nav class="navbar navbar-dark bg-primary">
+            <h1 class="h3 text-white mx-auto">Lidando com tabelas</h1>
+        </nav>
+    </div>
+
+    <!-- Área de texto -->
+    <div class="container mt-5">
+        <form>
+            <div class="form-group">
+                <label for="textarea1">Digite a tabela CSV:</label>
+                <textarea class="form-control mx-auto" id="textarea1" rows="10">
+                    Nome;Idade;Sexo
+                    Willian;18;Masculino
+                    Bernardo;17;Masculino
+                    Gustavo;16;Masculino
+                </textarea>
+            </div>
+        </form>
+
+        <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-success" onclick="organizaDados()">Transformar</button>
+        </div>
+    </div>
+
+    <script>        
+        organizaDados = function (tabelaCSV) {
+            var tabelaCSV = document.getElementById("textarea1").value;
+            
+           //corpo da tabela
+            var table = document.createElement("table");
+
+            //classes para o "table"
+            var attrTable = document.createAttribute("class");
+            attrTable.value = "table table-hover table-dark";
+            table.setAttributeNode(attrTable);
+            
+            //corpo da tabela
+            var thead = document.createElement("thead");
+            var tbody = document.createElement("tbody");
+         
+            var quebraLinha = tabelaCSV.split(String.fromCharCode(10)); //percorre string até achar o caracter line feed
+            var quebraPV; //var dividir a string
+
+            for (let i = 0; i < quebraLinha.length; i++) {
+                quebraPV = quebraLinha[i].split(";");
+                var tr = document.createElement("tr");          //um para cada linha
+
+                //atributo de "scope" para o "th" do "thead"
+                var th1 = document.createElement("th");
+                var attrTh1 = document.createAttribute("scope");
+                attrTh1.value = "row";
+                th1.setAttributeNode(attrTh1);
+                tr.appendChild(th1);
+
+                for (let j = 0; j < quebraPV.length; j++) {
+                    if (i == 0) {                       //se for a primeira linha vai colocar no "thead" da tabela
+                        var th = document.createElement("th");
+
+                        //atributo de "scope" para o "th" do "thead"
+                        var attrTh = document.createAttribute("scope");
+                        attrTh.value = "col";
+                        th.setAttributeNode(attrTh);
+
+                        var texto = document.createTextNode(quebraPV[j]);
+                        th.appendChild(texto);
+                        tr.appendChild(th);
+                        if (quebraPV[quebraPV.length - 1]) {    //caso esteja no ultimo array da linha, atribui ao "thead"
+                            thead.appendChild(tr);
+                        }
+                    }
+                    else{
+                        var td = document.createElement("td");
+                        var texto = document.createTextNode(quebraPV[j]);
+                        td.appendChild(texto);
+                        tr.appendChild(td);
+                        if (quebraPV[quebraPV.length - 1]) {    //caso esteja no ultimo array da linha, atribui ao "tbody"
+                            tbody.appendChild(tr);
+                        }
+                    }
+                } 
+            }
+            //definindo hierarquia
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            document.body.appendChild(table);   
+        }
+    </script>
+</body>
+</html>
