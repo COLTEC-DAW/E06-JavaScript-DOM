@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <title>TagName</title>
+</head>
+<body>
+
+    <div>
+        <nav class="navbar navbar-dark bg-primary">
+            <h1 class="h3 text-white mx-auto">TagName</h1>
+        </nav>
+    </div>
+
+    <div class="container mt-5">
+        <div class="form-inline d-flex justify-content-center">
+            <input class="form-control col-6" placeholder="Digite a tag a ser buscada" id="lbl_pesquisar">
+            <button class="btn btn-outline-primary col-1" id="btn_pesquisar" onclick="parametro()">Pesquisar</button>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center mt-5 pt-5">
+        <h2 class="bg-success text-white p-3 mb-2 rounded" id="saida"></h2>
+    </div>
+
+    <script>
+        var tagnames;
+        var parametro;
+
+        parametro = function () {
+            var texto = document.getElementById("lbl_pesquisar").value;
+            var quantidade;
+            quantidade = tagnames(document, texto.toUpperCase());
+            if (quantidade == 1 ) {
+                document.getElementById("saida").innerHTML = "Há " + quantidade + " tag " + texto + " na página.";
+            }
+            else{
+                document.getElementById("saida").innerHTML = "Há " + quantidade + " tags " + texto + " na página.";
+            }
+        }
+
+        tagnames = function (node, texto) {
+            var count = 0;
+            for (let i = 0; i < node.childNodes.length; i++) {
+                var childNode = node.childNodes[i];
+                if(childNode.childNodes.length > 0) {
+                    count += tagnames(childNode, texto);
+                }
+                if (childNode.tagName == texto) {
+                    count ++;
+                }
+            }
+            return count;
+        }  
+    </script>
+</body>
+</html>
