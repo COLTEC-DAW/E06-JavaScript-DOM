@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="Table.css">
+
+  <title>CSV para HTML</title>
+</head>
+<script>
+    function toTable() {
+      var _D = document
+      var csv = _D.getElementById("tabela").value  
+      var linhas = csv.split('\n')
+      var table = _D.createElement("TABLE")
+      
+        for (var i = 0; i < linhas.length; ++i){
+            var row = _D.createElement("TR")
+            var colunas = linhas[i].split(',')
+                   console.log(linhas[i][1])
+    
+                   for (var j = 0; j < colunas.length; ++j){
+                    var col = _D.createElement("TD")
+                    var text = _D.createTextNode(colunas[j])
+                    col.appendChild(text)
+                    row.appendChild(col)
+         }
+                    table.appendChild(row)
+        }
+         _D.body.appendChild(table)
+}
+</script>
+
+<body>
+
+ 
+  <div>
+    <nav class="navbar navbar-dark bg-dark">
+        <h1 class="h3 text-white mx-auto">Lidando com tabelas</h1>
+    </nav>
+</div>
+
+    <div>
+       <h1 class="mt-4 ml-4">  CSV </h1>
+     </div>
+
+    <div class="mt-2 ml-4">
+        <textarea id="tabela" rows="6" cols="70"></textarea>
+        <button class="btn btn-info mb-4 ml-3" onclick="toTable()">Gerar</button>
+      </div>
+</body>
+</html>

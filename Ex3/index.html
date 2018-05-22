@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+        <meta encoding="utf-8">
+        <link rel="stylesheet" type="text/css" href="Style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+        <title>Galeria de Filmes: Quentin Tarantino</title>
+    </head>
+    <script>
+        var Transforma;
+
+        Transforma = function () {
+            var imagens = document.getElementsByTagName("IMG");
+            var tamanhoFixo = imagens.length;
+
+            for (let i = 0; i < tamanhoFixo; i++) {
+                var texto = document.createElement("h5");
+
+
+                var altImagem = document.createTextNode(imagens[0].alt);
+
+                texto.appendChild(altImagem);
+                imagens[0].parentElement.replaceChild(texto, imagens[0]);
+            }
+        }
+    </script>
+    <body>
+        
+        <header class="col col_12 ">
+            <h1>Galeria do Tarantino</h1>
+            <h2>Um texto vale mais que mil imagens...</h2>
+        </header>
+    
+
+        <div id="principal">
+        <div class="col_4 ml-5">
+            <img class="zoom" src="img/caes_de_aluguel.jpg" alt="Cães de Aluguel">
+            <p><b></b></p>
+            <!-- <p class="ano">1992</p> -->
+        </div>  
+
+        <div class="col_4 ml-4">
+            <img class="zoom" src="img/pulp_fiction.jpg" alt="Pulp Fiction: Tempos de Violência">
+            <p><b></b></p>
+            <!-- <p class="ano" >1994</p> -->
+        </div>
+              
+
+        <div class="col_4 ml-5" >
+            <img class="zoom" src="img/kill_bill.jpg" alt="Kill Bill: Volume 1">
+            <p><b></b></p>
+            <!-- <p class="ano">2003</p> -->
+        </div>
+            
+        <div class="col_4 ml-5 ">
+            <img class="zoom" src="img/bastardos_inglorios.jpg" alt="Bastardos Inglórios">
+            <p><b></b></p>
+            <!-- <p class="ano">2009</p> -->
+        </div>
+      
+
+        <div class="col_4 ml-4">
+            <img class="zoom" src="img/django_livre.jpg" alt="Django Livre">
+            <p><b></b></p>
+            <!-- <p class="ano">2012</p> -->
+        </div>
+      
+       
+        <div class="col_4 ml-5">
+            <img class="zoom" src="img/os_oito_odiados.jpg" alt="Os Oito Odiados">
+            <p><b></b></p>
+            <!-- <p class="ano">2015</p> -->
+        </div>
+
+        <div class="col_12 btn">
+            <button  type="button" class="btn btn-warning" onclick="Transforma()">Transformar</button>
+        </div>
+    </div>
+
+    
+    <!-- <div class="col_12 footer"> 
+          
+        </div> -->
+<div class="col_12">
+        <footer class="footer">
+            <div class="container">
+              <span > Desenvolvimento de Aplicações Web - COLTEC/UFMG.</span>
+            </div>
+          </footer>
+        </div>
+    </body>
+</html>
