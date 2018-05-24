@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <title>E06</title>
+<body>
+
+  <textarea id="cvs" rows="8" cols="80"></textarea>
+  <button type="button" id="button" onclick="tabelar();">Tabelar</button>
+
+  <script charset="utf-8">
+    function tabelar() {
+       var cvs = document.getElementById("cvs");
+       var rows = cvs.value.split('\n');
+       var table = document.createElement("table");
+       for(each of rows) {
+         var tr = document.createElement("tr");
+         each = each.split(',');
+         for(each2 of each){
+           console.log(each2);
+           var td = document.createElement("td");
+           td.appendChild(document.createTextNode(each2));
+           tr.appendChild(td);
+         }
+         table.appendChild(tr);
+       }
+       document.body.appendChild(table);
+    }
+  </script>
+
+</body>
+</html>
