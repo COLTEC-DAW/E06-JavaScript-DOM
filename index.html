@@ -1,30 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <title>E06</title>
-<body>
+  <head>
+    <title>E06</title>
+  </head>
+  <body>
 
-  <textarea id="cvs" rows="8" cols="80"></textarea>
-  <button type="button" id="button" onclick="tabelar();">Tabelar</button>
+    <textarea id="cvs" rows="8" cols="80"></textarea>
+    <button type="button" id="button" onclick="tabelar();">Tabelar</button>
 
-  <script charset="utf-8">
-    function tabelar() {
-       var cvs = document.getElementById("cvs");
-       var rows = cvs.value.split('\n');
-       var table = document.createElement("table");
-       for(each of rows) {
-         var tr = document.createElement("tr");
-         each = each.split(',');
-         for(each2 of each){
-           console.log(each2);
-           var td = document.createElement("td");
-           td.appendChild(document.createTextNode(each2));
-           tr.appendChild(td);
-         }
-         table.appendChild(tr);
-       }
-       document.body.appendChild(table);
-    }
-  </script>
-
-</body>
+    <script charset="utf-8">
+      function tabelar() {
+        var box = false;
+        var word = "";
+        var cvs = document.getElementById("cvs").value;
+        var table = document.createElement("table");
+        var tr = document.createElement("tr");
+        for(i = 0; i <= cvs.length; i++) {
+          if(cvs[i] == '\"' && cvs[i+1] == '\"'){
+            word = word+cvs[i];
+            i++;
+          }
+          else if(cvs[i] == '\"') {
+            var box = box == true ? false : true;
+          }
+          else if(cvs[i] == ',' && box == false) {
+            var td = document.createElement("td");
+            td.appendChild(document.createTextNode(word));
+            tr.appendChild(td);
+            word = "";
+          }
+          else if((cvs[i] == '\n' || i == cvs.length) && box == false) {
+            if(word != "") {
+              var td = document.createElement("td");
+              td.appendChild(document.createTextNode(word));
+              tr.appendChild(td);
+              word = "";
+            }
+            table.appendChild(tr);
+            tr = document.createElement("tr");
+          }
+          else {
+            word = word+cvs[i];
+          }
+        }
+        document.body.appendChild(table);
+      }
+    </script>
+  </body>
 </html>
