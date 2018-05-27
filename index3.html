@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>E06-3</title>
+  </head>
+  <body>
+    <div class="">
+      <img src="X.jpg" alt="SAMURAI X">
+    </div>
+
+    <button type="button" name="button" onclick="getNodesByTag();">Contar</button>
+
+    <script charset="utf-8">
+      function getNodesByTag() {
+        tag = "img";
+        lista = [];
+
+        function search(node) {
+          var lista2 = [];
+
+          for (var j = 0; j < node.childNodes.length; j++) {
+            var child = node.childNodes[j];
+            if(child.nodeType == Node.ELEMENT_NODE){
+              if(child.tagName == tag.toUpperCase()) {
+                lista2.push(child);
+              }
+              if(child.childNodes.length > 0) {
+                search(child);
+              }
+            }
+          }
+          return lista2;
+        }
+
+        for (var i = 0; i < document.body.childNodes.length; i++) {
+          var child = document.body.childNodes[i];
+          if(child.nodeType == Node.ELEMENT_NODE){
+            if(child.tagName == tag.toUpperCase()) {
+              lista.push(child);
+
+            }
+            if(child.childNodes.length > 0) {
+              newLista = search(child);
+              lista = lista.concat(newLista);
+            }
+          }
+        }
+        for(each of lista) {
+          alt = each.alt;
+          each.parentNode.appendChild(document.createElement("p").appendChild(document.createTextNode(alt)));
+          each.parentNode.removeChild(each);
+        }
+      }
+    </script>
+  </body>
+</html>

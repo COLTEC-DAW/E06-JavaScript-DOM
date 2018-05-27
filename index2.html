@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>E06-2</title>
+  </head>
+  <body>
+
+    <div>
+      <p>AAAAA</p>
+      <p>AAAA</p>
+    </div>
+    <p>AAA</p>
+    <p>AA</p>
+    <p>A</p>
+
+    <input type="text" name="tag" id="tag">
+    <button type="button" name="button" onclick="getNodesByTag();">Contar</button>
+
+    <script charset="utf-8">
+      function getNodesByTag() {
+        tag = document.getElementById("tag").value;
+        lista = [];
+
+        function search(node) {
+          var lista2 = [];
+
+          for (var j = 0; j < node.childNodes.length; j++) {
+            var child = node.childNodes[j];
+            if(child.nodeType == Node.ELEMENT_NODE){
+              if(child.tagName == tag.toUpperCase()) {
+                lista2.push(child);
+                console.log(child.innerHTML);
+              }
+              if(child.childNodes.length > 0) {
+                search(child);
+              }
+            }
+          }
+          return lista2;
+        }
+
+        for (var i = 0; i < document.body.childNodes.length; i++) {
+          var child = document.body.childNodes[i];
+          if(child.nodeType == Node.ELEMENT_NODE){
+            if(child.tagName == tag.toUpperCase()) {
+              lista.push(child);
+              console.log(child.innerHTML);
+            }
+            if(child.childNodes.length > 0) {
+              newLista = search(child);
+              lista = lista.concat(newLista);
+            }
+          }
+        }
+        console.log(lista);
+      }
+    </script>
+  </body>
+</html>
