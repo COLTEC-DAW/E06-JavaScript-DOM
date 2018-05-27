@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>E06-2</title>
+    <title>E06-3</title>
   </head>
   <body>
-
-    <div>
-      <p>AAAAA</p>
-      <p>AAAA</p>
+    <div class="">
+      <img src="X.jpg" alt="SAMURAI X">
     </div>
-    <p>AAA</p>
-    <p>AA</p>
-    <p>A</p>
 
-    <input type="text" name="tag" id="tag">
     <button type="button" name="button" onclick="getNodesByTag();">Contar</button>
 
     <script charset="utf-8">
       function getNodesByTag() {
-        tag = document.getElementById("tag").value;
+        tag = "img";
         lista = [];
 
         function search(node) {
@@ -29,7 +23,6 @@
             if(child.nodeType == Node.ELEMENT_NODE){
               if(child.tagName == tag.toUpperCase()) {
                 lista2.push(child);
-                console.log(child.innerHTML);
               }
               if(child.childNodes.length > 0) {
                 search(child);
@@ -44,7 +37,7 @@
           if(child.nodeType == Node.ELEMENT_NODE){
             if(child.tagName == tag.toUpperCase()) {
               lista.push(child);
-              console.log(child.innerHTML);
+
             }
             if(child.childNodes.length > 0) {
               newLista = search(child);
@@ -52,7 +45,11 @@
             }
           }
         }
-        console.log(lista);
+        for(each of lista) {
+          alt = each.alt;
+          each.parentNode.appendChild(document.createElement("p").appendChild(document.createTextNode(alt)));
+          each.parentNode.removeChild(each);
+        }
       }
     </script>
   </body>
