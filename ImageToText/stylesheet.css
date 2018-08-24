@@ -1,0 +1,20 @@
+#nav{
+    background-color: #16a085;
+    shadow: 5px;
+}
+
+#title{
+    font-family: 'Tajawal', sans-serif !important;
+    font-size: 200%;
+    color: #575656;
+}
+#btn{
+    border-width: medium;
+    max-width: 100%;
+    border-color: #575656;
+    border-radius: 15px;
+    color: #16a085;
+    font-family: 'Tajawal', sans-serif !important;
+    font-size: 1em;
+    text-align: center;
+}
