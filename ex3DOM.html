@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <img src="https://r.hswstatic.com/w_907/gif/tesla-cat.jpg" alt="cat">
+        <img src="https://r.hswstatic.com/w_907/gif/tesla-cat.jpg" alt="cat">
+        <img src="https://r.hswstatic.com/w_907/gif/tesla-cat.jpg" alt="cat">
+
+
+    <button onclick="myFunction()">Click :P</button>
+
+
+    <script>
+        function myFunction() {
+        var img = document.getElementsByTagName("img");
+        
+        for (var i = 0; i < img.length; i++) {
+            var parent = img[i].parentElement;
+            var text = img[i].alt;
+            var Node = document.createTextNode(text);
+            
+            parent.insertBefore(Node, img[i]);
+            parent.removeChild(img[i]);
+        }
+        }    
+    </script>
+
+    </body>
+</html>
