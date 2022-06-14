@@ -1,10 +1,10 @@
 function createTable(csvRepresentation){
 
     let lines = csvRepresentation.split("\n");
-    let tableData = [];
+    let tableData = [[]];
     let collumns = lines[0].split(",");
 
-    collumns.forEach((value) => { tableData.push(value); } );
+    collumns.forEach((value) => { tableData[0].push(value); } );
 
     lines.forEach((line, index) => {
         if(index != 0){
@@ -30,3 +30,5 @@ function createTable(csvRepresentation){
     return table;
 
 }
+
+ createTable("nome,idade\nulisses,17\npedro,18")
