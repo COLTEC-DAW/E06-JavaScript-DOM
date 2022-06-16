@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>E06-JavaScript</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>CSV to HTML</h1>
+        </div>
+
+        <div onclick="openModal()" class="button">Criar Tabela</div>
+
+        <div class="modal">
+            
+            <div class="modal-content">
+
+                <div class="modalHeader">
+        
+                    <div class="modalTitle">
+                        <h3>
+                            Nova Tabela
+                        </h3>
+                    </div>
+    
+                    <div onclick="closeModal()" class="closeButton">X</div>
+    
+                </div>
+
+                <div class="modalBody">
+                    <form class="newTableForm" onsubmit="submitFunction();return false">
+
+                        <div class="titleInput">
+                            <label for="titleInput">Título da tabela:</label><br>
+                            <input type="text" id="titleInput" name="titleInput" value=""><br>
+                        </div>
+                        
+                        <div class="csvInput">
+                            <p>CSV: </p>
+                            <textarea id="csvInput" name="csvInput" rows="8" cols="50"></textarea>
+                        </div>
+        
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="main">
+            <div id="title"></div>
+            <div id="tableSpace"></div>
+        </div>
+
+
+        <script src="./E06.js"></script>
+    </div>
+</body>
+</html>
