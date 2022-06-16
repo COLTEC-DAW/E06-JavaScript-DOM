@@ -23,7 +23,7 @@ body {
     justify-content: center;
 
     width: 100%;
-    height: 70px;
+    height: 100px;
 
     background-color: black;
     color: white;
@@ -34,6 +34,7 @@ body {
 .button {
     background-color: #4CAF50;
     border: none;
+    border-radius: 5px;
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -107,6 +108,20 @@ body {
 
 .main > div {
     margin: 5px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 60px;
+
+    border-top: 2px solid black;
+    position: absolute;
+    bottom: 0;
 }
 
 table {

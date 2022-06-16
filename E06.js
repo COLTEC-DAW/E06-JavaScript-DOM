@@ -45,3 +45,15 @@ function submitFunction() {
     createHTMLtable(titleInputValue, csvInputValue);
     closeModal();
 }
+
+function getByName(node, elem, arrayAux) {
+
+    for (var i = 0; i < node.childNodes.length; i++) {
+        let childNode = node.childNodes[i];
+
+        if(childNode.childNodes.length > 0) { getByName(childNode, elem, arrayAux); } 
+        if(childNode.tagName == elem) { arrayAux.push(childNode); }
+    }
+
+    return arrayAux;
+}
