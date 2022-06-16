@@ -11,60 +11,80 @@
     <div class="container">
 
         <div class="header">
-            <h1>CSV to HTML</h1>
+            <h1>E06</h1>
         </div>
 
-        <div onclick="openModal()" class="button">Criar Tabela</div>
+        <div class="row">
 
-        <div class="modal">
-            
-            <div class="modal-content">
+            <div class="column">
 
-                <div class="modalHeader">
+                <h1>CSS to HTML</h1>
+
+                <div onclick="openModal()" class="button">Nova tabela</div>
         
-                    <div class="modalTitle">
-                        <h3>
-                            Nova Tabela
-                        </h3>
+                <div class="modal">
+                    
+                    <div class="modal-content">
+        
+                        <div class="modalHeader">
+                
+                            <div class="modalTitle">
+                                <h3>
+                                    Nova Tabela
+                                </h3>
+                            </div>
+            
+                            <div onclick="closeModal()" class="closeButton">X</div>
+            
+                        </div>
+        
+                        <div class="modalBody">
+                            <form class="newTableForm" onsubmit="submitFunction(); return false">
+        
+                                <div class="titleInput">
+                                    <label for="titleInput">Título da tabela:</label><br>
+                                    <input type="text" id="titleInput" name="titleInput" value=""><br>
+                                </div>
+                                
+                                <div class="csvInput">
+                                    <p>CSV: </p>
+                                    <textarea id="csvInput" name="csvInput" rows="10" cols="50"></textarea>
+                                </div>
+                
+                                <div>
+                                    <input type="submit" value="Submit" class="button">
+                                </div>
+                            </form>
+                        </div>
+        
                     </div>
+        
+                </div>
+        
+                <div id="tableTitle"></div>
+                <div id="tableSpace"></div>
     
-                    <div onclick="closeModal()" class="closeButton">X</div>
-    
+            </div>
+
+            <div class="column">
+
+                <h1>Galeria de Imagens</h1>
+
+                <div onclick="imgToString(document)" class="button">Descrições</div>
+
+                <div>
+                    <img src="https://picsum.photos/200/300" alt="randow 01">
+                    <img src="https://picsum.photos/201/300" alt="randow 02">
                 </div>
 
-                <div class="modalBody">
-                    <form class="newTableForm" onsubmit="submitFunction();return false">
-
-                        <div class="titleInput">
-                            <label for="titleInput">Título da tabela:</label><br>
-                            <input type="text" id="titleInput" name="titleInput" value=""><br>
-                        </div>
-                        
-                        <div class="csvInput">
-                            <p>CSV: </p>
-                            <textarea id="csvInput" name="csvInput" rows="8" cols="50"></textarea>
-                        </div>
-        
-                        <div>
-                            <input type="submit" value="Submit">
-                        </div>
-                    </form>
+                <div>
+                    <img src="https://picsum.photos/202/300" alt="randow 03">
+                    <img src="https://picsum.photos/203/300" alt="randow 04">
                 </div>
 
             </div>
 
         </div>
-
-        <div class="main">
-            <div id="title"></div>
-            <div id="tableSpace"></div>
-        </div>
-
-        <div class="footer">
-            <p>Todos os direitos reservados</p>
-            <p>©Welcome121</p>
-        </div>
-
 
         <script src="./E06.js"></script>
     </div>

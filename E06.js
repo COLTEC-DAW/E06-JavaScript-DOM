@@ -11,18 +11,18 @@ function closeModal() {
 }
 
 function createHTMLtable(titleText, csvData) {
-    let title = document.getElementById("title");
-    let tableSpace = document.getElementById("tableSpace");
-
-    let table = document.createElement("table");
-    let csvTable = csvData.split("\n");
-    let h1 = document.createElement("h1");
+    let title = document.getElementById("tableTitle");
+    let h1 = document.createElement("h5");
     let text = document.createTextNode(titleText);
 
     h1.appendChild(text);
     title.appendChild(h1);
 
-    csvTable.forEach(line => {
+    let tableSpace = document.getElementById("tableSpace");
+    let table = document.createElement("table");
+    let csvTable = csvData.split("\n");
+
+    csvTable.forEach( (line) => {
         let values = line.toString().split(",");
         let tr = document.createElement("tr");
 
@@ -57,3 +57,16 @@ function getByName(node, elem, arrayAux) {
 
     return arrayAux;
 }
+
+function imgToString(node) {
+    let images = document.getElementsByTagName("img");
+
+    images = [].slice.call(images);
+    images.forEach(image => { 
+        let parent = image.parentElement;
+        let alt = document.createElement("p").appendChild(document.createTextNode(image.alt.toString()));
+
+        parent.removeChild(image);
+        parent.appendChild(alt);
+    });
+} 
