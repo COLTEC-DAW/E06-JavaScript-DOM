@@ -9,3 +9,19 @@ function fazTabela(){
     document.body.innerHTML += tabela;
     console.log(tabela)
 }
+// getByName(elem)
+function getElementsByTagName(tag){
+    let elementsWithTag = [];
+    recursiveSearch(document.body, tag, elementsWithTag);
+    return elementsWithTag;
+}
+function recursiveSearch(node, tag, arrayElements){
+    if (node.childNodes.length != 0){
+        node.childNodes.forEach((childNode) =>{
+            if (childNode.tagName != undefined) recursiveSearch(childNode, tag, arrayElements);
+        })
+    }
+    if (node.tagName == tag){
+        arrayElements.push(node);
+    }
+}
