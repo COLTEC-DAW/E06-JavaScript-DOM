@@ -25,3 +25,13 @@ function recursiveSearch(node, tag, arrayElements){
         arrayElements.push(node);
     }
 }
+//Um texto vale mais que mil imagens
+function replaceImageWithText(){
+    let imagens = getElementsByTagName("IMG");  
+    for (let i = 0; i < imagens.length; i++) {
+        let parentNode = imagens[i].parentNode;
+        let span = document.createElement('span');
+        span.appendChild(document.createTextNode(imagens[i].alt));
+        parentNode.replaceChild(span, imagens[i]);
+    }
+}
