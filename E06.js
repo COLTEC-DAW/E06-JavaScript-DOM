@@ -64,8 +64,7 @@ function callGetByName(){
 }
 
 function getByName(node, elem){
-
-
+    
     let array_elements_tag_name = [];
 
     for(let i = 0; i < node.childNodes.length; i++){
