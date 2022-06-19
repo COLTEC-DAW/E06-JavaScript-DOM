@@ -1,0 +1,8 @@
+nome,idade
+ulisses,18
+eric,16
+machado,10
+Amanda,17
+Benvas,89
+claudio,11
+cordeio,19
