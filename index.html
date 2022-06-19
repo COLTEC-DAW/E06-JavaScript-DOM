@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>E-06</title>
+
+</head>
+<body>
+
+    <a href="index.html" id="first_link"><div class="header">
+        
+        E06-JavaScript-DOM
+    </div></a>
+    <div class="content">
+        <div class="row">
+        <div class="colunas col-6">
+
+              <div class="title-area">
+                <div class="title-box">
+                 <h1>Converter CSV para HTML Table</h1>
+                </div>
+               </div>
+
+               <br>
+
+                <div class="title">
+                    <label for="title-input">Título da tabela:</label><br>
+                    <input type="text" id="title-input" name="title-input" value=""><br>
+                </div>
+                
+                <div class="csv">
+                    <p>Formato CSV: <a href="sugestion.html" target="_blank">sugestão de teste</a></p>
+                    <textarea id="csv-input" name="csvInput" rows="15" cols="60"></textarea>
+                </div>
+
+                <div>
+                    <input type="submit" value="Criar Tabela" class="button" onclick="convertCSVtoHTML()">
+                </div>
+
+
+            <div id="table_title"></div>
+            <div id="table_content"></div>
+
+        </div>
+
+
+        <div class="colunas col-6">
+
+            <div class="title-area">
+                <div class="title-box">
+                 <h1>Imagens</h1>
+                </div>
+            </div>
+
+            <div class="imgs row">
+                <div class="img col-6">
+                    <img src="img/img02.png" alt="imagem 01">
+                </div>
+                <div class="img col-6">
+                    <img src="img/img03.png" alt="imagem 02">
+                </div>
+                <div class="img col-6">
+                    <img src="img/img04.jpg" alt="imagem 03">
+                </div>
+                <div class="img col-6">
+                    <img src="img/img05.jpg" alt="imagem 04">
+                </div>
+            </div>
+
+            <div>
+                <input type="submit" value="Descrição" class="button" onclick="img_to_description()">
+            </div>
+
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <script src="E06.js"></script>
+    
+</body>
+</html>
