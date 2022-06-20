@@ -1,30 +1,11 @@
-var element = document.createElement('table');
-
-var carro = {
-    prop: "matue",
-    marca: "porsche",
-    ano: 2020
- };
-
-let table = document.createElement('table');
-
-ADC_ColTable(carro, table)
+function ConverseCSV_HTML()
 {
-    let tr1 = document.createElement('tr');
+    let titleInput = document.getElementById("titleInput").value;
+    let inputText = document.getElementById("inputText").value;
 
-    let td1 = document.createElement('td');
-    let td2 = document.createElement('td');
-    let td3 = document.createElement('td');
+    let title = document.createTextNode(titleInput);
 
-    td1.inneHTML = carro.prop;
-    td2.innerHTML = carro.marca;
-    td3.innerHTML = carroo.ano;
+    let Tabtitle = document.getElementById("Tabtitle");
+    let Tabcontent = document.getElementById("Tabcontent");
 
-    table.appendChild(tr);
-
-    tr1.appendChild(td1);
-    tr1.appendChild(td2);
-    tr1.appendChild(td3);
 }
-
-ADC_ColTable(carro, table);
