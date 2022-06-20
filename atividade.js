@@ -1,11 +1,24 @@
 function fazTabela(){
     let texto = document.getElementById("entrada").value;
-    let arrayValores = texto.split(",")
+    let arrayValores = texto.split("\n")
     let tabela = `<table>`;
-    arrayValores.forEach((value) =>{
-        tabela += `<tr><td>${value}</td></tr>`;
+    arrayValores.forEach((row, index) =>{
+        tabela += `<tr>`
+        let rowValues = row.split(",");
+        if (index == 0){
+            rowValues.forEach((value) =>{
+                tabela += `<td>${value}</td>`
+            });
+            tabela += `</tr>`
+        }
+        else{
+            rowValues.forEach((value) =>{
+                tabela += `<td>${value}</td>`
+            });
+            tabela += `</tr>`
+        }
     })
-    tabela += `</table>`
+    tabela += `</tr></table>`
     document.body.innerHTML += tabela;
     console.log(tabela)
 }
