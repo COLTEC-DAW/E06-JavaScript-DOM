@@ -4,3 +4,7 @@ table
     display: flex;
     justify-content: center;
 }
+.button1
+{
+    background-color: blue;
+}
