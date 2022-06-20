@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>getByName(elem)</title>
+</head>
+<body>
+    <div>
+        <button>Botão 1</button><br>
+        <button>Botão 2</button><br>
+        <button>Botão 3</button><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam temporibus optio quae ratione eum ipsa soluta error maxime magni earum. Assumenda labore officiis ad non fuga obcaecati eaque molestiae ea!</p>
+    </div>
+    <div>
+        <button>Botão 4</button><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magni molestias nam accusamus consequatur molestiae eveniet alias, quo, vitae ratione qui a numquam atque, odio laudantium neque blanditiis et deserunt.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam officiis natus earum fugit, dolores nostrum maiores perferendis libero, temporibus dolor nesciunt cum veritatis iusto magni odio eos ipsum mollitia nihil.</p>
+    </div>
+
+    <script>
+        function getByName(node, elem){
+            var count = 0;
+
+            for (var i=0; i<node.childNodes.length; i++){
+                if (node.childNodes[i].childNodes.length > 0){
+                   count += getByName(node.childNodes[i], elem);
+                }
+
+                if (node.childNodes[i].tagName == elem){
+                    count++;
+                }
+            }
+            return count;    
+        }
+
+        console.log("A tag button aparece " + getByName(document, "BUTTON") + " vezes");
+        console.log("A tag p aparece " + getByName(document, "P") + " vezes");
+        console.log("A tag div aparece " + getByName(document, "DIV") + " vezes");
+        console.log("A tag br aparece " + getByName(document, "BR") + " vezes");
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Um texto vale mais que mil imagens</title>
+
+    <style>
+        img{
+            width: 100px;
+            height: 200px;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="https://www.coltec.ufmg.br/coltec-ufmg/wp-content/uploads/2018/06/leandro.jpg" alt="el maia">
+    </div>
+    <div>
+        <img src="https://www.coltec.ufmg.br/coltec-ufmg/wp-content/uploads/2018/06/joao.jpg" alt="ola jovens">
+    </div>
+    <div>
+        <img src="https://www.coltec.ufmg.br/coltec-ufmg/wp-content/uploads/2018/06/honda.jpg" alt="honda!">
+    </div>
+
+    <button onclick="substitui()">Um texto vale mais que mil imagens</button>
+
+    <script>
+        function substitui(){
+            var imagens = document.getElementsByTagName("IMG");
+            var size = imagens.length;
+            for(var i=0; i<size; i++){
+                var p = document.createElement("p");
+                var descricao = document.createTextNode(imagens[0].alt);
+                imagens[0].parentNode.appendChild(descricao);
+                imagens[0].parentNode.removeChild(imagens[0]);
+            }
+        }
+    </script>
+</body>
+</html>

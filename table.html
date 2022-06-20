@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lidando com tabelas</title>
+</head>
+<body>
+    <label for="">Digite sua tabela no campo abaixo</label><br>
+    <textarea id="texto" cols="30" rows="5"></textarea><br>
+    <button onclick="tabela();" style="margin-bottom: 10px">Enviar</button>
+    <table id="table">
+    </table>
+
+
+    <script>
+        function tabela(){
+            var table = document.getElementById("table"); 
+            var texto = document.getElementById("texto");
+            var row = texto.value.split(' '); 
+
+            var tr = document.createElement("tr"); 
+
+            for (var i=0; i<row.length; i++){
+                var td = document.createElement("td");
+
+                var node = document.createTextNode(row[i]);
+                td.appendChild(node);
+
+                var attr = document.createAttribute("style");
+                attr.value = "border: 1px solid black; padding: 0px 10px;";
+                td.setAttributeNode(attr);
+
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+            texto.value = ""; 
+        }
+    </script>
+</body>
+</html>
