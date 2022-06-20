@@ -1,0 +1,13 @@
+#pagina {
+    width: 960px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: #0de4e4;
+    font-size: 100%;
+
+}
+.tabela {
+    border: 2px solid black;
+    margin: auto;
+}
