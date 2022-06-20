@@ -33,3 +33,14 @@ function getByName(elem){
       
       return count;
 }
+
+function imgToDesc(){
+    let images = document.getElementsByTagName("img");
+
+    for(var i = 0; i < images.length; i++){
+        let desc = document.createElement("p");
+        desc.appendChild(document.createTextNode(images[i].alt));
+        
+        image[i].parentNode.replaceChild(desc, images[i]);
+    }
+}
