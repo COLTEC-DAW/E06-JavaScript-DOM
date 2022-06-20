@@ -78,11 +78,24 @@
     color: black;
 }
 
-.content_CSV, .content_IMG {
+.content_CSV {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    width: 90%;
+    padding: 1%;
+
+    color: black;
+    
+}
+
+.content_IMG {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 
     width: 90%;
     padding: 1%;
@@ -148,4 +161,9 @@ td {
     padding: 8px;
   }
   
+img {
+    min-width: 200px;
+    max-width: 200px;
+}
+
 tr:nth-child(even) {background-color: #f2f2f2;}

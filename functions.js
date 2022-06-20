@@ -27,3 +27,11 @@ function HTMLtable() {
     tableArea.appendChild(table);
     document.getElementById("tableInfo").style.display = "none";
 }
+
+function getElementsByTagName(tag) {
+
+}
+
+function imageConversor() {
+    let images = document.getElementsByTagName()
+}
