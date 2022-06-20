@@ -20,3 +20,16 @@ function csvToHtml(){
     
     document.body.appendChild(table);
 }
+
+function getByName(elem){
+    let count = 0;
+
+    for(var i in document.body.childNodes) {
+        let childNode = document.body.childNodes[i];
+
+        if(childNode.childNodes.length > 0) getByName(childNode, string);
+        if(childNode.tagName == elem) count++;
+      }
+      
+      return count;
+}
