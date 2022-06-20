@@ -17,10 +17,12 @@ function createTable(csvRepresentation){
 
     let table = document.createElement("table");
     
-    tableData.forEach((line) => {
+    tableData.forEach((line, index) => {
         let tableRow = document.createElement("tr");
         for(value of line){
-            let tableData = document.createElement("td");
+            let tableData;
+            if(index == 0) tableData = document.createElement("th");
+            else tableData = document.createElement("td");
             tableData.appendChild(document.createTextNode(value));
             tableRow.appendChild(tableData);
         }
@@ -28,7 +30,6 @@ function createTable(csvRepresentation){
     })
 
     return table;
-
 }
 
- createTable("nome,idade\nulisses,17\npedro,18")
+
