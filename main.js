@@ -18,3 +18,17 @@ function table(){
     }
     document.body.appendChild(table);
 }
+
+function getByName(elem){
+    let array = [];
+    recursiveSearch(document.body, elem.toUpperCase(), array);
+    return array;
+}
+
+function recursiveSearch(node, tag, arrayElements){
+    for (let childOfNode of node.childNodes){
+        if (childOfNode.childNodes.length != 0) recursiveSearch(childOfNode, tag, arrayElements);
+        if (childOfNode.tagName == tag) arrayElements.push(childOfNode);
+    }
+    return arrayElements;
+} 
