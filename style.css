@@ -91,7 +91,7 @@
     
 }
 
-.content_IMG {
+#content_IMG {
     display: flex;
     align-items: center;
     justify-content: center;

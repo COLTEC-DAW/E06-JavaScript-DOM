@@ -32,6 +32,15 @@ function getElementsByTagName(tag) {
 
 }
 
-function imageConversor() {
-    let images = document.getElementsByTagName()
+function imageToText() {
+    let Images = document.getElementsByTagName("img");
+    let ImagesList = [...Images]
+    console.log(ImagesList);
+    ImagesList.forEach( (image) => {
+
+        let imageDescription = document.createElement("p");
+        imageDescription.appendChild( document.createTextNode( image.alt.toString() ) );
+        image.parentElement.appendChild(imageDescription);
+        image.parentElement.removeChild(image);
+    } )
 }
