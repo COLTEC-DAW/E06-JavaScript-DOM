@@ -31,4 +31,15 @@ function recursiveSearch(node, tag, arrayElements){
         if (childOfNode.tagName == tag) arrayElements.push(childOfNode);
     }
     return arrayElements;
-} 
+}
+
+function moreValuable(){
+    let imgs = document.getElementsByTagName("img");
+    let i = 0;
+    do{
+        let span = document.createElement('span');
+        let alt = document.createTextNode(imgs[i].alt);
+        span.appendChild(alt);
+        document.body.replaceChild(span, imgs[i]); continue;
+    }while(i < imgs.length);
+}
