@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: #999;
+    color: #999;
+}
+
+.header { 
+    width: 100%;
+    padding: 35px;
+    text-align: center;
+
+    border-bottom: 4px solid #a20520;
+    background-color: black;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+}
+
+.CSV {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border: 2px solid #a20520;
+}
+
+.IMG {
+    width: 100%;
+    height: 100%;  
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border: 2px solid #a20520;
+}
+
+.button_CSV, .button_IMG {
+    width: 20%;
+    
+    padding: 1%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    font-size: small;
+    text-align: center;
+
+    border: 1px;
+    border-radius: 5px;
+
+    background-color: #a20520;
+    color: black;
+}
+
+.content_CSV {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 90%;
+    padding: 1%;
+
+    color: black;
+    
+}
+
+#content_IMG {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    width: 90%;
+    padding: 1%;
+
+    color: black;
+    
+}
+
+#tableArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 90%;
+    padding: 1%;
+
+    border-radius: 5px;
+
+    color: black;
+
+    text-align: center;
+}
+
+#tableInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 90%;
+    padding: 1%;
+}
+
+
+#CSV_text {
+    display: flex;
+    width: 30%;
+    height: 100px;
+}
+
+#tableName {
+    display: flex;
+}
+
+.button_CSV:hover, .button_IMG:hover {
+    box-shadow: 0px 0px 90px black;
+    transition: all 0.2s ease-in;
+    transform: scale(1.1);
+}
+
+table {
+    border: 2px solid black;
+    border-radius: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+  }
+  
+td {
+    border: 2px solid black;
+    text-align: center;
+    padding: 8px;
+  }
+  
+img {
+    min-width: 200px;
+    max-width: 200px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}

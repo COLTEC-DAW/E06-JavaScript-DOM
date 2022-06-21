@@ -1,0 +1,7 @@
+Aluno, Nota
+Machado, 29
+Ulisses, 40
+Benvindo, 29
+Eric, 29
+Amanda, 30
+Cordeiro, 29
