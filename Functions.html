@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <script src="Functions.js"></script>
+
+    <title>DOM Functions</title>
+</head>
+
+<body class="color">
+    <div class="container">
+        <div class="row">
+
+        <div class="col-6">
+            <div id="tablePosition" class="my-4">
+                <h1 class="mb-4"><b>Conversor de CSV para Table </b></h1>
+                <textarea id="csv" class="ms-2" cols="50" rows="5"></textarea><br>
+                <button class="m-2" type="submit" onclick="converter()">Converter</button>
+            </div>
+            
+            <div class="my-4">
+                <h1 class="mb-4"><b>Buscar Elementos </b></h1>
+                <textarea id="tag" class="ms-2" cols="50" rows="1"></textarea><br>
+                <button class="m-2" type="submit" onclick="tagByName()">Buscar</button>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <h1 class="my-4"><b>Substituir Imagens </b></h1>
+            <div class="row">
+                <div class="col-4 img"><img class="w-100 mx-2 h1" src="Victor.png" alt="Victor"></div>
+                <div class="col-4 img"><img class="w-100 mx-2 h1" src="Vincent.png" alt="Vincent"></div>
+                <div class="col-4 img"><img class="w-100 mx-2 h1" src="Vinicius.png" alt="Vinicius"></div><br>
+            </div>
+            <button class="mx-2 my-4" type="submit" onclick="replace()">Substituir</button>
+        </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
