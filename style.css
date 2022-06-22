@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #999;
+    color: #999;
+}
+
+.header { 
+    width: 100%;
+    padding: 35px;
+    text-align: center;
+
+    border-bottom: 4px solid #0527bb;
+    background-color: rgb(36, 35, 35);
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+}
+
+.CSV {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border: 4px solid #3607b6;
+}
+
+.IMG {
+    width: 100%;
+    height: 100%;  
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border: 2px solid #4605bd;
+}
+
+.button_CSV, .button_IMG {
+    width: 20%;
+    
+    padding: 1%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    font-size: small;
+    text-align: center;
+
+    border: 5px;
+    border-radius: 5px;
+
+    background-color: #0f90cc;
+    color: black;
+}
+
+.content_CSV {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 70%;
+    padding: 1%;
+
+    color: black;
+    
+}
+
+#content_IMG {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    width: 90%;
+    padding: 1%;
+
+    color: black;
+    
+}
+
+#tabelaArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 90%;
+    padding: 2%;
+
+    border-radius: 3px;
+
+    color: black;
+
+    text-align: center;
+}
+
+#tabelaInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 90%;
+    padding: 2%;
+}
+
+
+#CSV_text {
+    display: flex;
+    width: 30%;
+    height: 100px;
+}
+
+#tabelaName {
+    display: flex;
+}
+
+.button_CSV:hover, .button_IMG:hover {
+    box-shadow: 0px 0px 90px rgb(8, 8, 8);
+    transition: all 0.2s ease-in;
+    transform: scale(1.1);
+}
+
+tabela {
+    border: 2px solid black;
+    border-radius: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+  }
+  
+td {
+    border: 2px solid rgb(5, 24, 77);
+    text-align: center;
+    padding: 8px;
+  }
+  
+img {
+    min-width: 90px;
+    max-width: 90px;
+}
