@@ -1,41 +1,42 @@
-let body = document.body;
+function ex1(){
+    let body = document.body;
 
-//var csvForm = document.body.getElementsByClassName("csvFile");
+    let csv = document.getElementById('csvFiletxt').value;
+    console.log(csv);
 
-//var arrayDeAlgo = Array.from(document.querySelector('#csvFile').value);
+    let csvLines = csv.split(/\r?\n/);
+    console.log(csvLines);
 
-/*console.log(document.querySelector('#csvFile').value);
-console.log("222");*/
+    //criando tabela e atributos
+    let table = document.createElement('table');
+    let tableAttr = document.createAttribute('border');
+    let tableHead = document.createElement('thead');
+    let tableBody = document.createElement('tbody');
 
-/*let csv = document.getElementById('csvFile').value;
-console.log(csv);*/
+    //adicionando cabeçalho e estilo
+    tableAttr.value = 2;
+    table.setAttributeNode(tableAttr);
+    table.appendChild(tableHead);
+    table.appendChild(tableBody);
 
-let csv = document.getElementById('csvFiletxt').value;
-console.log(csv);
+    //adicionando tabela toda
+    body.appendChild(table);
 
-let csvLines = csv.split(/\r?\n/);
-console.log(csvLines);
-
-//criando tabela e atributos
-let table = document.createElement('table');
-let tableAttr = document.createAttribute('border');
-let tableHead = document.createElement('thead');
-
-//adicionando cabeçalho e estilo
-tableAttr.value = 2;
-table.setAttributeNode(tableAttr);
-table.appendChild(tableHead);
-
-//adicionando tabela toda
-body.appendChild(table);
-
-//adicionando elementos na tabela
-let row1 = document.createElement('tr');
-for(i = 0, j = 0; i < csvLines[0].length; i++, j++){
-    let rowData
-    let heading = document.createElement('th');
-    heading.innerHTML = csvLines[i][j];
+    //adicionando elementos na tabela
+    for(i = 0; i < csvLines.length; i++){
+        let row = document.createElement('tr');
+        let csvCollumns = csvLines[i].split(",");
+        for(j = 0; j < csvCollumns.length; j++){
+            let heading = document.createElement('th');
+            heading.innerHTML = csvCollumns[j];
+            row.appendChild(heading);
+        }
+        //verificação simples de se deve ser colocado no head ou no body
+        if(!i){
+            tableHead.appendChild(row);
+        }
+        else{
+            tableBody.appendChild(row);
+        }
+    }
 }
-
-/*joao, jlkdsjalfk, klsadjflkajs
-aklsdfj, cpovizx, qwembwer*/
