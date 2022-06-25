@@ -1,58 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta encoding="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <title>Galeria de Filmes: Quentin Tarantino</title>
+  <link rel="stylesheet" type="text/css" href="styleEx3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <script>
-    function getByNameTagAlt() {
-      function searchAndLoad(node, searchTag, list) {
-        console.log(node.tagName);
-        if (!node.hasChildNodes) return;
-        if (node.tagName === searchTag) list.push(node);
-        for (let i = 0; i < node.childNodes.length; i++) {
-          searchAndLoad(node.childNodes[i], searchTag, list);
-        }
+    function imageToAlt() {
+      let imgs = document.querySelectorAll("img");
+
+      for (i = 0; i < imgs.length; i++) {
+        imgs[i].parentElement.insertBefore(document.createTextNode(imgs[i].alt), imgs[i]);
+        imgs[i].parentElement.removeChild(imgs[i]);
       }
-
-      const nodesList = [];
-
-      console.log("vai executar!");
-      searchAndLoad(document.body, "DIV", nodesList);
-      console.log(nodesList);
     }
   </script>
 
 </head>
 
 <body>
-  <h1 class="tituloPrincipal">Galeria do Tarantino tres</h1>
+  <h1 class="tituloPrincipal">Galeria do Tarantino</h1>
   <h2 class="subtituloPrincipal">Galeria de alguns dos filmes de Quentin Tarantino</h2>
 
   <div class="container">
     <div class="col_4 filmes">
       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-        lçka
-        <!--<img src="img/caes_de_aluguel.jpg" class= "imagens">-->
+        <img src="img/caes_de_aluguel.jpg" class="imagens" alt="imagem de filme">
       </a>
       <p class="nomeFilme"><b>Cães de Aluguel</b></p>
       <p class="anoFilme">1992</p>
     </div>
     <div class="col_4 filmes">
       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-        lçka
-        <!--<img src="img/pulp_fiction.jpg" class= "imagens">-->
+        <img src="img/pulp_fiction.jpg" class="imagens" alt="imagem de filme">
       </a>
       <p class="nomeFilme"><b>Pulp Fiction: Tempos de Violência</b></p>
       <p class="anoFilme">1994</p>
     </div>
     <div class="col_4 filmes">
       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-        lçka
-        <!--<img src="img/kill_bill.jpg" class= "imagens" >-->
+        <img src="img/kill_bill.jpg" class="imagens" alt="imagem de filme">
       </a>
       <p class="nomeFilme"><b>Kill Bill: Volume 1</b></p>
       <p class="anoFilme">2003</p>
@@ -61,23 +53,21 @@
   <div class="container">
     <div class="col_4 filmes">
       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-        lçka
-        <!-- <img src="img/bastardos_inglorios.jpg" class= "imagens">-->
+        <img src="img/bastardos_inglorios.jpg" class="imagens" alt="imagem de filme">
       </a>
       <p class="nomeFilme"><b>Bastardos Inglórios</b></p>
       <p class="anoFilme">2009</p>
     </div>
     <div class="col_4 filmes">
       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-        lçka
-        <!--<img src="img/django_livre.jpg" class= "imagens">-->
+        <img src="img/django_livre.jpg" class="imagens" alt="imagem de filme">
       </a>
       <p class="nomeFilme"><b>Django Livre</b></p>
       <p class="anoFilme">2012</p>
     </div>
     <div class="col_4 filmes">
       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-        <!--<img src="img/os_oito_odiados.jpg" class="imagens">-->
+        <img src="img/os_oito_odiados.jpg" class="imagens" alt="imagem de filme">
       </a>
       <p class="nomeFilme"><b>Os Oito Odiados</b></p>
       <p class="anoFilme">2015</p>
@@ -89,7 +79,7 @@
   </footer>
 
   <br>
-  <input type="submit" value="runjs" onclick="getByNameTagAlt()" />
+  <input type="submit" value="runjs" onclick="imageToAlt()" />
 </body>
 
 </html>
