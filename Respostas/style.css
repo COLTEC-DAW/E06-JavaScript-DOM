@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(23, 25, 39);
+    color:aliceblue;
+    text-align: left;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:20px;
+    margin-bottom: 5px;
+    padding: 5%;
+}
