@@ -1,0 +1,27 @@
+*{
+    margin: auto;
+    padding: 10px;
+}
+
+header{
+    display: block;
+    position: center;
+    background-color: aliceblue;
+}
+
+
+h1{
+    color: rgb(226, 143, 222);
+    position: center;
+    display: block;
+}
+
+h2{
+    position: center;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+}
+
