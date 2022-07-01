@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um texto vale mais que mil imagens...</title>
+    <style>
+        
+        #botao {
+            
+            background: #0066A2;
+
+            color: white;
+
+            border-style: none;
+
+           
+
+            height: 50px;
+
+            width: 100px;
+
+            font: bold 15px arial, sans-serif;
+
+            margin-left: 100px;
+            margin-top: 200px;
+            border-radius: 5px;
+
+        }
+            
+    </style>
+</head>
+<body style="background-color: blueviolet;">
+<div id="geral">
+    
+        <img src="92577d4fd28985bab689439ef0285247.webp" alt="" height="500" width="600" style="float: left;">
+    
+    
+        <img src="download.jpg" alt="" height="500" width="600" style="float: right;">
+    
+</div>
+       <button onclick="altera();" id="botao">Clique!!</button>
+    
+
+    <script>
+        function altera(){
+    var child = document.getElementsByTagName("img");
+    var pai = document.getElementById("geral");
+    
+    while(child.length > 0){
+        console.log(child.length);
+        pai.removeChild(child[0]);
+    }
+
+    var criaElemento = document.createElement("h3");
+   var Break = document.createElement("br");
+   
+   var node = document.createTextNode("Foto do chaves no clipe El Chavo.");
+   criaElemento.appendChild(node);
+   criaElemento.appendChild(Break);
+   var elem = document.getElementsByTagName("div");
+   elem[0].appendChild(criaElemento);
+
+   
+   Break = document.createElement("br");
+   criaElemento = document.createElement("h3");
+   node = document.createTextNode("Rochelle com olhar debochado.");
+   criaElemento.appendChild(node);
+   criaElemento.appendChild(Break);
+   elem = document.getElementsByTagName("div");
+   elem[0].appendChild(criaElemento);
+}
+    </script>
+</body>
+</html>
