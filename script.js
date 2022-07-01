@@ -8,30 +8,52 @@ function ConverseCSV_HTML()
     let Tabtitle = document.getElementById("Tabtitle");
     let Tabcontent = document.getElementById("Tabcontent");
 
+    Tabtitle.innerHTML="";
+    Tabcontent.innerHTML="";
+
+    Tabtitle.style.borderTop = " .1rem solid black";
+    Tabtitle.style.borderRight = " .15rem solid black";
+    Tabtitle.style.borderLeft = " .15rem solid black";
+    Tabtitle.style.borderBottom = " .1rem solid black";
+
     Tabtitle.appendChild(title);
 
     let table = document.createElement("table");
-
-    let tableCSV_HTML = csv_input.split("\n");
+    let tableCSV_HTML = inputText.split("\n");
 
     tableCSV_HTML.forEach(linhasTr=>{
         
         let palavrasLinhas = linhasTr.toString().split(",");
         let linhaX = document.createElement("tr");
 
-        palavrasLinhas.forEach(PalavrasTd=>{
+        palavrasLinhas.forEach(PaLinha=>{
+            let Neymar = document.createElement("td");
+            let texto = document.createTextNode(PaLinha);
+            Neymar.appendChild(texto);
+            linhaX.appendChild(Neymar);
 
-            let Palavra = document.createElement("td");
-            let texto = document.createTextNode(Palavra);
-            Palavra.appendChild(texto);
-            linhaX.appendChild(Palavra);
     
         })
 
-        table.appendChild(linha);
+        table.appendChild(linhaX);
 
     });
 
-    table_content.appendChild(table);
+    Tabcontent.appendChild(table);
 
 }
+
+
+function troca_descIMG ()
+{
+    let IMG = [].slice.call(document.getElementsByTagName("img"));
+
+    IMG.forEach(img =>
+        {
+           let ParenteIMG = img.parentElement;
+           let description = document.createTextNode(img.alt.toString()); 
+           ParenteIMG.removeChild(img);
+           ParenteIMG.appendChild(description);
+        });
+}
+

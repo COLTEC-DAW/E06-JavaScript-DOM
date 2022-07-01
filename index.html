@@ -2,21 +2,61 @@
 <html>
 <head>
   <meta charset="utf-8">
+
+  <link href="style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
   <div class="container">
     <div class="row">
-      <div class="offset-3 col-6 offset-3">
-        <input type="submit" class="button1" value="Criar Tabela csv" onclick="ConverseCSV_HTML()">
+      <div class="offset-3 col-6 offset-3" style="margin-top: 30px; margin-bottom: 15px;">
+        <div>
+          <label for="tittleInput">Titulo foda:</label><br>
+          <input type="text" id="titleInput" name="titleInput" value=""><br>
+        </div>
+        <div>
+          <textarea id="inputText" name="csvInput" rows="15" cols="60"></textarea>
+        </div>
+        <div>
+          <input type="submit" class="button1" value="Criar Tabela csv" onclick="ConverseCSV_HTML()">
+        </div>
+        
         <div id="Tabtitle"></div>
         <div id="Tabcontent"></div>
     
       </div>
     </div>
+
+    <br>
+    <div class="row">
+        <div class="center col-6">
+          <img src="ImgDaw\Picsart_22-04-28_15-05-18-939.jpg" alt="image1 homiranha">
+        </div>
+
+        <div class="center col-6">
+          <img src="ImgDaw\Picsart_22-04-28_15-05-42-589.jpg" alt="image2 batman">
+        </div>
+
+        <div class="center col-6">
+          <img src="ImgDaw\Picsart_22-04-28_15-06-09-916.jpg" alt="image3 diario de uma paixão">
+        </div>
+
+        <div class="center col-6">
+          <img src="ImgDaw\Picsart_22-04-28_15-06-32-298.jpg" alt="image4 como eu era antes de voce" >
+        </div>
+    </div>
+
+    <div class="center" style="margin-bottom: 300px;">
+      <input type="submit" value="description" class="button1" onclick="troca_descIMG ()">
+    </div>
+
   </div>
 
+
+<script src="script.js"></script>
+<script src="GetBy.js"></script>
 </body>
 </html>
