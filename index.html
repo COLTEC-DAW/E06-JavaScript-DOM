@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> javascript DOM</title>
+		<meta charset="utf-8">
+	<style>
+        h1 {
+            margin-left: 300px;
+        }
+        body{
+    
+    color:black;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:20px;
+    margin-top: 8%;
+    margin-left: 25%;
+    background-color: gray;
+}
+    </style>
+	</head>
+	<body id = "pagina">
+		<h1>Tabela</h1>
+        <p>
+		Digite as informações que você deseja inserir na tabela, separando os itens de cada <br> linha com uma vírgula:
+		</p>
+		<textarea  rows="10" cols="100"></textarea>
+		<table class="tabela"></table>
+		<button onclick="principal();">OK</button>
+
+    <script>
+        function altera(texto){
+    var vTexto=[];
+    var linhas = texto.split('\n');
+    for(i=0; i < linhas.length; i++){
+        vTexto[i] = linhas[i].split(',');
+    }
+    return vTexto;
+}
+
+function principal(){
+    var tb = document.getElementsByTagName("table")[0];
+    var txt = document.getElementsByTagName("textarea")[0].value;
+    var Tabela = altera(txt);
+    while(tb.childNodes.length>0){
+        tb.removeChild(tb.childNodes[0]);
+    }
+    for(i = 0; i < Tabela.length;i++){
+       var li = document.createElement("tr");
+       for( w = 0; w < Tabela[i].length; w++){
+        var colunas = document.createElement("td");
+        var value = document.createTextNode(Tabela[i][w]);
+        colunas.appendChild(value);
+        li.appendChild(colunas);
+       }
+       tb.appendChild(li);
+
+    }
+}
+    </script>
+	</body>
+</html>
