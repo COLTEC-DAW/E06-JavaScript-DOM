@@ -1,0 +1,47 @@
+body
+{
+    background-image: linear-gradient(greenyellow, green, greenyellow);
+}
+
+table
+{
+    width: auto;
+}
+
+tr
+{
+    border: 10px solid black;
+    min-width: 20px;
+}
+
+td
+{
+    border: 10px solid black;
+    padding: 7px;
+}
+
+img
+{
+    width: 500px;
+    margin: 15px;
+    border: 13px ridge green;
+    border-radius: 50%;
+}
+
+#Tabtitle
+{
+    display: flex;
+    justify-content: center;
+}
+
+.center
+{
+    display: flex;
+    justify-content: center;
+}
+
+.button1
+{
+    border-radius: 5px;
+    background-color: green;
+}
